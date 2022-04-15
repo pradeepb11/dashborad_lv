@@ -1,0 +1,89 @@
+<div id="loginCon">
+    <div class="conteiner">
+        <div class="row">
+            <div class="login_box">
+                <div class="login_container">
+                    <div class="brand_company">
+                        <img src="./assets/images/paynet.png" style="width: 100px;" alt="">
+                        <a class="brand-link fs-1 text-center m-auto">
+                            <span class="brand-text font-weight-bold ms-3"> <span
+                                  class="brandCaptialW"></span> Dashboard</span>
+                        </a>
+                    </div>
+                    <div class="wrap_login card p-4 shadow-lg border rounded ">
+                        <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+                            <!-- username  -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="username">Username
+                          </label>
+                                <input type="text" id="username" class="form-control" placeholder="Username" formControlName="username" [ngClass]="{
+                                  'is-invalid': submitted && f['username'].errors && f['username'].touched,
+                                  'is-valid': f['username'].touched && f['username'].valid 
+                                  }" autocomplete="off" />
+                                <div *ngIf="f['username'].touched && f['username'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['username'].errors?.['required']">
+                                        Please Enter Your Username!
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- / username  -->
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4 posrelative">
+
+                                <label class="form-label" for="password">Password</label>
+                                <div class="float-end">
+                                    <a href="" class="text-small text-primary an">
+                                Forgot Password?
+                              </a>
+                                </div>
+                                <input [type]="show_button ? 'text' : 'password'" id="password" class="form-control " formControlName="password" placeholder="Password" [ngClass]="{
+                                      'is-invalid': submitted && f['password'].errors && f['password'].touched,
+                                      'is-valid': f['password'].touched && f['password'].valid 
+                                  }" autocomplete="off" />
+                                <i class="posabso iconsright" [class]="show_eye ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPassword()"></i>
+                                <div *ngIf="f['password'].touched && f['password'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['password'].errors?.['required']">
+                                        Please Enter Your Password!
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- / Password input -->
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary " [disabled]="!loginForm.valid">
+                              Login</button>
+
+                            <div class="divider d-flex align-items-center my-4">
+                                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                            </div>
+
+                            <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                                <a href="#!" class="text-dark"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="#!" class="text-dark"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                                <a href="#!" class="text-dark"><i class="fab fa-google fa-lg"></i></a>
+                            </div> -->
+
+                            <div class="mt-4 pt-1">
+                                <p class="mb-0 float-end">Don't have an account? <a routerLink="./registration" class="text-primary fw-bold">Sign Up</a></p>
+                            </div>
+                        </form>
+                        <!-- <ul class="login-menu">
+
+                            <li class="blue-login"><a routerLink="./register">Registration</a></li>
+                        </ul> -->
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

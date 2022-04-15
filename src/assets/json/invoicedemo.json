@@ -1,0 +1,143 @@
+{
+    "invoiceDemo":[
+        {
+            "TaxSch":"GST",
+            "Version":"1.0",
+            "Irn":"",
+            "TranDtls": {
+            "Catg": "B2B",
+            "RegRev": "RG",
+            "Typ": "REG",
+            "EcmTrnSel": false,
+            "EcmTrn": "N",
+            "EcmGstin": null
+            },
+            "DocDtls": {
+            "Typ": "INV",
+            "No": "sadsd",
+            "Dt": "2019-11-25",
+            "OrgInvNo": null
+            },
+            "ExpDtls": {
+            "ExpCat": null,
+            "WthPay": null,
+            "ShipBNo": null,
+            "ShipBDt": "2019-11-25",
+            "Port": null,
+            "InvForCur": 0,
+            "ForCur": "BDT",
+            "CntCode": "BD"
+            },
+            "SellerDtls": {
+            "Gstin": "37BZNPM9430M1kl",
+            "TrdNm": "TAN TEST NIC",
+            "Bno": "TEST2",
+            "Bnm": "TEST1",
+            "Flno": "3RD FLOOR",
+            "Loc": "GANDHINAGAR",
+            "Dst": null,
+            "Pin": 518001,
+            "Stcd": 37,
+            "Ph": null,
+            "Em": null
+            },
+            "BuyerDtls": {
+            "Gstin": "37BZNPM9430M1kl",
+            "TrdNm": "TAN TEST NIC",
+            "Bno": "TEST2",
+            "Bnm": "TEST1",
+            "Flno": "3RD FLOOR",
+            "Loc": "GANDHINAGAR",
+            "Dst": null,
+            "Pin": 518001,
+            "Stcd": 37,
+            "Ph": null,
+            "Em": null
+            },
+            "DispDtls": {
+            "Gstin": "37BZNPM9430M1kl",
+            "TrdNm": "TAN TEST NIC",
+            "Bno": "TEST2",
+            "Bnm": "TEST1",
+            "Flno": "3RD FLOOR",
+            "Loc": "GANDHINAGAR",
+            "Dst": null,
+            "Pin": 518001,
+            "Stcd": 37,
+            "Ph": null,
+            "Em": null
+            },
+            "ShipDtls": {
+            "Gstin": "37BZNPM9430M1kl",
+            "TrdNm": "TAN TEST NIC",
+            "Bno": "TEST2",
+            "Bnm": "TEST1",
+            "Flno": "3RD FLOOR",
+            "Loc": "GANDHINAGAR",
+            "Dst": null,
+            "Pin": 518001,
+            "Stcd": 37,
+            "Ph": null,
+            "Em": null
+            },
+            "ValDtls": {
+            "AssVal": 100.00,
+            "CgstVal": 1.50,
+            "SgstVal": 1.50,
+            "IgstVal": 0.00,
+            "CesVal": 15.00,
+            "StCesVal": 36.00,
+            "CesNonAdVal": 0.00,
+            "Disc": 0, "OthChrg": 0,
+            "TotInvVal": 154.00
+            },
+            "RefDtls": {
+            "InvRmk": null,
+            "InvStDt": "2019-11-25",
+            "InvEndDt": "2019-11-25",
+            "PrecInvNo": null,
+            "PrecInvDt": "2019-11-25",
+            "RecAdvRef": null,
+            "TendRef": null,
+            "ContrRef": null,
+            "ExtRef": null,
+            "ProjRef": null,
+            "PORef": null
+            },
+            "PayDtls": {
+            "Nam": null,
+            "Mode": null,
+            "FinInsBr": null,
+            "PayTerm": null,
+            "PayInstr": null,
+            "CrTrn": null,
+            "DirDr": null,
+            "CrDay": null,
+            "BalAmt": null,
+            "PayDueDt": null,
+            "AcctDet": null
+            },
+            "ItemsList": [{
+            "PrdNm": "dfasf",
+            "PrdDesc": "dfdfsdf",
+            "HsnCd": "10",
+            "BarCde":"",
+            "Qty": 10,
+            "FreeQty":0,
+            "Unit": "bag",
+            "UnitPrice": 10,
+            "TotAmt": 0,
+            "CgstRt": 1.500,
+            "SgstRt": 0,
+            "IgstRt": 0,
+            "CesRt": 15.000,
+            "CesNonAdVal": 0,
+            "StateCes": 36.000,
+            "TotItemVal": 100,
+            "Discount": 0,
+            "OthChrg": 0,
+            "AssAmt":0
+            }]
+            }
+    ]
+}

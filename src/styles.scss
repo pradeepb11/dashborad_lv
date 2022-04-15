@@ -1,0 +1,68 @@
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: #fff;
+}
+
+.table {
+    thead {
+        tr {
+            th {
+                border-right: 1px solid #fff !important;
+                // font-size: 12px;
+                white-space: nowrap;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.dp-nav-header-btn {
+    border: 1px solid #e1e1e1;
+}
+
+.dp-calendar-nav-left,
+.dp-calendar-nav-right,
+.dp-calendar-wrapper,
+.dp-calendar-weekday,
+.dp-calendar-day,
+.dp-calendar-nav-container {
+    border: none !important
+}
+
+.dp-calendar-nav-container {
+    height: 50px !important;
+    border-bottom: 1px solid #e1e1e1;
+    box-shadow: 1px 0 0 #e9ecef, -1px 0 0 #e9ecef, 0 1px 0 #e9ecef, 0 -1px 0 #e9ecef, 0 3px 13px rgb(0 0 0 / 8%);
+    border: 1px solid #000;
+}
+
+.dp-popup {
+    box-shadow: 1px 1px 4px #00000075 !important;
+}
+
+.dp-calendar-weekday {
+    width: 50px;
+}
+
+.dp-calendar-day {
+    width: 50px;
+}
+
+@import '~@angular/cdk/overlay-prebuilt.css';
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border-color: red
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+@import './assets/sass/sidebar';

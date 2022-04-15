@@ -1,0 +1,148 @@
+<nav id="sidebar" class="sidebar js-sidebar">
+    <div class="sidebar-content js-simplebar">
+        <a class="sidebar-brand" href="">
+            <span class="sidebar-brand-text align-middle text-center ">
+
+  <img src="./assets/images/paynet.png" style="width: 120px;" alt="">
+  <!-- <sup><small class="badge bg-primary text-uppercase ms-2">Pro </small></sup> -->
+
+          </span>
+
+            <!-- <img src="./assets/images/icons/Paynet_Logo.svg" title="Paynet" alt=""> -->
+
+            <!-- <svg class="sidebar-brand-icon align-middle" width="32px" height="32px" viewBox="0 0 24 24" fill="none" stroke="#ee843c" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" color="#FFFFFF" style="margin-left: -3px">
+  
+  <path ></path>
+  <path d="M12 4L20 8.00004L12 12L4 8.00004L12 4Z"></path>
+  <path d="M20 12L12 16L4 12"></path>
+  <path d="M20 16L12 20L4 16"></path>
+</svg> -->
+        </a>
+
+        <!-- <div class="sidebar-user">
+          <div class="d-flex justify-content-center">
+              <div class="flex-shrink-0 activeIndicate">
+                  <img src="./assets/images/avatars/avatar-01.jpg" class="avatar img-fluid img-thumbnail rounded-circle me-1" alt="Pradeep Bhosle" />
+                  <span class="indicator_active"></span>
+              </div>
+              <div class="flex-grow-1 ps-2">
+                  <a class="sidebar-user-title  " href="#">
+      Pradeep Bhosle CHS LTD
+      
+    </a>
+
+
+                  <div class="sidebar-user-subtitle">Merchant ID : 1841</div>
+              </div>
+          </div>
+      </div> -->
+
+        <ul class="sidebar-nav">
+            <!-- <li class="sidebar-header">
+              Pages
+          </li> -->
+            <li class="sidebar-item active">
+                <a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+                    <i class="align-middle" data-feather="sliders"></i>
+                    <span class="align-middle">Dashboards</span>
+                </a>
+                <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                    <li class="sidebar-item active"><a class="sidebar-link" routerLink="./nupaylog">Nupay Log</a></li>
+                    <!-- <li class="sidebar-item"><a class="sidebar-link" routerLink="/dasha">Merchant Dash theme1</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" routerLink="/dashb">Merchant Dash theme2</a></li> -->
+
+                </ul>
+            </li>
+
+            <!-- <li class="sidebar-item">
+                <a data-bs-target="#auth" data-bs-toggle="collapse" class="sidebar-link">
+                    <i class="align-middle" data-feather="sliders"></i>
+                    <span class="align-middle">Auth</span>
+                </a>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item active"><a class="sidebar-link" routerLink="auth/login">Login</a></li>
+                    <li class="sidebar-item active"><a class="sidebar-link" routerLink="auth/register">Register</a></li>
+                </ul>
+            </li> -->
+
+            <!-- <li class="sidebar-item">
+                <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Invoices</span>
+                </a>
+                <ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" routerLink="/invoice">List Invoice</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+
+            <li class="sidebar-item">
+                <a href="#Refund" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">Refund</span>
+                </a>
+                <ul id="Refund" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" routerLink="/payout">Payout</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" routerLink="/nupay">Nupay</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" routerLink="/merchantmid">MerchantCSV</a></li>
+
+                </ul>
+            </li>
+
+            <li class="sidebar-item">
+                <a data-bs-target="#ui" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Bank Management</span>
+                </a>
+                <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" routerLink="/pagenotfound">Alerts</a></li>
+
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#icons" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                    <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Reports</span>
+                    <span class="sidebar-badge badge bg-light">1.500+</span>
+                </a>
+                <ul id="icons" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                    <li class="sidebar-item"><a class="sidebar-link" routerLink="/pagenotfound">Feather</a></li>
+
+                </ul>
+            </li>
+            <li class="sidebar-header">
+                My Setting
+            </li>
+            <li class="sidebar-item">
+                <a data-bs-target="#forms" class="sidebar-link ">
+                    <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">My Profile</span>
+                </a>
+
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="!#">
+                    <i class="align-middle" data-feather="list"></i> <span class="align-middle">Upload Documents</span>
+                </a>
+            </li>
+
+
+            <li class="sidebar-item">
+                <a class="sidebar-link collapsed" (click)="logOut()">
+                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">LogOut</span>
+                </a>
+
+            </li> -->
+
+
+
+
+
+
+
+
+
+        </ul>
+
+
+    </div>
+</nav>

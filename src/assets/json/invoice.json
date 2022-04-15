@@ -1,0 +1,36 @@
+{
+    "invoice": [{
+		"id": "RT3080",
+		"createdAt": "2021-08-18",
+		"paymentDue": "2021-08-19",
+		"description": "Re-branding",
+		"paymentTerms": 1,
+		"clientName": "Pradeep Bhosle",
+		"clientEmail": "pradeep@gmail.com",
+		"status": "paid",
+        "currency": "INR",
+		"senderAddress": {
+			"street": "Paynet ",
+			"city": "Mumbai",
+			"postCode": "401302",
+			"country": "Maharastra"
+		},
+		"clientAddress": {
+			"street": "106B/10  Kendell Street",
+			"city": "Mumbai",
+			"postCode": "401302",
+			"country": "Maharastra"
+		},
+		"items": [
+			{
+				"name": "Brand Guidelines",
+				"quantity": 1,
+				"price": 1800.90,
+				"total": 1800.90
+			}
+		],
+		"total": 1800.90
+	}
+        
+    ]
+}

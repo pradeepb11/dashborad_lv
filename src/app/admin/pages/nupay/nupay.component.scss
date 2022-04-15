@@ -1,0 +1,24 @@
+.table {
+    thead {
+        tr {
+            th {
+                &:nth-child(5) {
+                    width: 50% !important;
+                    white-space: pre-wrap;
+                    // background-color: red;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                &:nth-child(5) {
+                    // width: 100px;
+                    white-space: pre-wrap;
+                    // background-color: red;
+                }
+            }
+        }
+    }
+}

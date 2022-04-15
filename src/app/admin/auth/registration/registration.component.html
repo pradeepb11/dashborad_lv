@@ -1,0 +1,171 @@
+<div id="loginCon">
+    <div class="container ">
+        <div>
+            <form [formGroup]="basicInfoRegForm" (ngSubmit)="onbasicInfoRegistrationForm()">
+
+                <div class="brand_company">
+                    <img src="./assets/images/paynet.png" style="width: 100px;" alt="">
+                    <a class="brand-link fs-1 text-center m-auto">
+                        <span class="brand-text font-weight-bold ms-3"> <span
+              class="brandCaptialW"></span> Registration</span>
+                    </a>
+                </div>
+                <div class="  p-4 shadow-lg border rounded RegistraionFM">
+
+                    <div class="row">
+
+
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="first_name">Enter Your First Name</label>
+                                <input type="text" class="form-control" formControlName="first_name" autocomplete="off" id="first_name" [ngClass]="{
+                      'is-invalid': submitted && f['first_name'].errors && f['first_name'].touched,
+                      'is-valid': f['first_name'].touched && f['first_name'].valid 
+                      }">
+                                <div *ngIf="f['first_name'].touched && f['first_name'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['first_name'].errors?.['required']">
+                                        Please Enter Your First Name!
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="username">Enter Your Last Name</label>
+                                <input type="text" class="form-control" formControlName="last_name" autocomplete="off" id="username" [ngClass]="{
+                      'is-invalid': submitted && f['last_name'].errors && f['last_name'].touched,
+                      'is-valid': f['last_name'].touched && f['last_name'].valid 
+                      }">
+                                <div *ngIf="f['last_name'].touched && f['last_name'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['last_name'].errors?.['required']">
+                                        Please Enter Your Phone Number!
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="username">Enter Your Mobile Number</label>
+                                <input type="number" class="form-control" formControlName="mobile" autocomplete="off" id="username" [ngClass]="{
+                      'is-invalid': submitted && f['mobile'].errors && f['mobile'].touched,
+                      'is-valid': f['mobile'].touched && f['mobile'].valid 
+                      }">
+                                <div *ngIf="f['mobile'].touched && f['mobile'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['mobile'].errors?.['required']">
+                                        Please Enter Your mobile!
+                                    </div>
+                                    <div *ngIf="f['mobile'].errors?.['pattern']">
+                                        Please, Enter Valid Phone Number or 10 Digit.
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="username">Enter Your Email Id</label>
+                                <input type="email" class="form-control" formControlName="email" autocomplete="off" id="username" [ngClass]="{
+                      'is-invalid': submitted && f['email'].errors && f['email'].touched,
+                      'is-valid': f['email'].touched && f['email'].valid 
+                      }">
+                                <div *ngIf="f['email'].touched && f['email'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors?.['required']">
+                                        Please Enter Your email!
+                                    </div>
+                                    <div *ngIf="f['email'].errors?.['pattern']">
+                                        Email is invalid !
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="d-block mb-1">
+                                    <label for="password" class="control-label ">Password</label>
+
+                                </div>
+                                <div class="form-outline mb-4 posrelative">
+                                    <input [type]="show_button ? 'text' : 'password'" formControlName="password" class="form-control" autocomplete="off" id="password" [ngClass]="{
+                          'is-invalid': submitted && f['password'].errors && f['password'].touched,
+                          'is-valid': f['password'].touched && f['password'].valid 
+                          }">
+                                    <i class="posabso iconsright" [class]="show_eye ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPassword()"></i>
+                                    <div *ngIf="f['password'].touched && f['password'].invalid" class="invalid-feedback">
+                                        <div *ngIf="f['password'].errors?.['required']">
+                                            Please Enter Your password!
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="d-block mb-1">
+                                    <label for="password" class="control-label ">Confirm Password</label>
+
+                                </div>
+                                <div class="posrelative">
+                                    <input [type]="show_button ? 'text' : 'password'" formControlName="confirm_password" class="form-control" autocomplete="off" id="password" [ngClass]="{
+                          'is-invalid': submitted && f['confirm_password'].errors && f['confirm_password'].touched,
+                          'is-valid': f['confirm_password'].touched && f['confirm_password'].valid 
+                          }">
+                                    <i class="posabso iconsright" [class]="show_eye ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPassword()"></i>
+                                    <div *ngIf="f['confirm_password'].touched && f['confirm_password'].invalid" class="invalid-feedback">
+                                        <div *ngIf="f['confirm_password'].errors?.['required']">
+                                            Please Enter Your confirmpassword!
+                                        </div>
+                                        <div *ngIf="f['confirm_password'].errors?.['confirmedValidator']">Password and Confirm Password must be match.
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group  ">
+                            <button class="btn btn-primary" [disabled]="!basicInfoRegForm.valid">
+                <span class="button__text me-3">Register Now</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+              </button>
+                            <button class="btn btn-secondary ms-2" (click)="resetRegistration()">
+                <span class="button__text me-3">Reset</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+              </button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <!-- {{basicInfoRegForm.value | json}} -->
+        </div>
+    </div>
+</div>
