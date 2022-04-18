@@ -29,7 +29,15 @@ export class HeaderComponent implements OnInit {
   }
 
   sidebarToggle(){
-
+    const slides = document.getElementsByClassName('js-simplebar');
+    if (slides[0]) {
+      var e = (slides[0]);
+      document.querySelectorAll(".js-sidebar [data-bs-parent]").forEach((function(t) {
+      //  console.log(e.parentNode);
+       let b =  e.parentElement !;
+       b.classList.toggle('collapsed');
+      }))
+    }
   }
 
   logout(){

@@ -8,6 +8,8 @@ import { IDayCalendarConfig, DatePickerComponent } from "ng2-date-picker";
 import * as dayjs from 'dayjs';
 import {NupayService} from '../../../service/nupay.service';
 import {BehaviorSubject} from 'rxjs';
+import * as Feather from 'feather-icons';
+
 
 
 interface State {
@@ -22,7 +24,7 @@ interface State {
   styleUrls: ['./nupay.component.scss'],
   providers:[NupayService, DatePipe]
 })
-export class NupayComponent implements OnInit {
+export class NupayComponent implements OnInit, AfterViewInit {
   
   submitted = false;
   filterForm: FormGroup;
@@ -64,8 +66,8 @@ export class NupayComponent implements OnInit {
 
 
   datePickerConfig ={
-    format: 'YYYY-MM-DD',
-    // format:'MM-DD-YYYY'
+    // format: 'YYYY-MM-DD',
+    format:'DD-MM-YYYY'
  
   }
 
@@ -75,6 +77,11 @@ export class NupayComponent implements OnInit {
     private fb: FormBuilder,
     private datePipe: DatePipe
   ) { }
+
+  
+  ngAfterViewInit(): void {
+    Feather.replace();
+  }
 
   ngOnInit(): void {
     this.setfilterFormValidate();
@@ -115,45 +122,32 @@ export class NupayComponent implements OnInit {
   .subscribe(
     (res) =>{
       console.log(res.response.data)
-      let start_Date = this.datePipe.transform(this.start_date, 'YYYY-MM-d');
-      let end_Date = this.datePipe.transform(this.end_date, 'YYYY-MM-d');
-      if(start_Date != null && end_Date != null && this.filterForm.value != null){
-      // const selectedMembers = res.response.data.data.filter((m:any) =>
-     
-      //   // console.log(m.timestamp)
-      //   // console.log((m.timestamp))
-      //   (m.timestamp) >= start_Date! && (m.timestamp) <= end_Date!
+      this.loading = true;
+      setTimeout(()=>{
+        this.loading = false;
+        this.MessageDataInfo = false;
+        this.nupaytList = res.response.data.data;
+        // console.log(this.nupaytList)
+        // this.total = res.response.data.total;
+        this.nupaytList = res.response.data.data;
+        this.mypagination = true;
         
-      //   )
-        this.loading = true;
-        setTimeout(()=>{
-          this.loading = false;
-          this.MessageDataInfo = false;
-          this.nupaytList = res.response.data.data;
-          // console.log(this.nupaytList)
-          // this.total = res.response.data.total;
-          this.nupaytList = res.response.data.data;
-          this.mypagination = true;
-          
-        
-         
-          this.total = res.response.data.last_page;
-
-
-          // this.filterForm.reset();
-          if(this.nupaytList.length == 0){
-            this.MessageDataInfo = true; 
-            this.loading = false;
-          }
-        },1000)
       
        
- 
-       } else{
-       console.log('else part');
+        this.total = res.response.data.last_page;
+
+
+        // this.filterForm.reset();
+        if(this.nupaytList.length == 0){
+          this.MessageDataInfo = true; 
+          this.loading = false;
+        }
+      },1000)
+      // let start_Date = this.datePipe.transform(this.start_date, 'YYYY-MM-d');
+      // let end_Date = this.datePipe.transform(this.end_date, 'YYYY-MM-d');
+      // let start_Date = this.datePipe.transform(this.start_date, 'dd-MM-YYYY');
+      // let end_Date = this.datePipe.transform(this.end_date, 'dd-MM-YYYY');
       
-      //  this.getallDataProduct();
-       }
     }
   )
     

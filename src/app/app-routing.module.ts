@@ -8,9 +8,11 @@ const routes: Routes = [
     redirectTo:'admin',
     pathMatch: 'full'
   },
-  // { path: 'dashboard', loadChildren: () => import('./admin/pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  
   { path: 'dashboard', loadChildren: () => import('./admin/pages/pages.module').then(m => m.PagesModule) },
-  // { path: 'nupay', loadChildren: () => import('./admin/pages/nupay/nupay.module').then(m => m.NupayModule) },
+ 
+  
+  
   {
     path:'**',
     redirectTo:'admin'

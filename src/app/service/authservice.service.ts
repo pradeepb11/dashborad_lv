@@ -29,6 +29,18 @@ export class AuthserviceService {
     this.loggedInUser = this.loggedUserSubject.asObservable();
   }
 
+  private loggedInStatus = JSON.parse(localStorage.getItem('loggedInUser') || ('false'));
+
+
+  public get loggedInUserValue(): Users {
+    // console.log(this.loggedUserSubject.value);
+    return this.loggedUserSubject.value;
+
+  }
+
+  public get LoginStatus(){
+    return JSON.parse(localStorage.getItem('loggedInUser') || this.loggedInStatus.toString());
+  }
   
   // loginUser
   loginUser(username: string, password:string): Observable<any>{
