@@ -4,6 +4,7 @@ import {Subject} from 'rxjs';
 import {MerchantService} from '../../../service/merchant.service';
 import {BehaviorSubject} from 'rxjs';
 import * as Feather from 'feather-icons';
+import { Router } from '@angular/router';
 
 
 
@@ -29,6 +30,7 @@ export class MerchantprofilelistComponent implements OnInit {
   constructor(
     private merchantService: MerchantService,
     private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -72,12 +74,12 @@ export class MerchantprofilelistComponent implements OnInit {
           this.total = res.response.data.last_page;
   
   
-          // this.filterForm.reset();
+          this.filterFormMerchant.reset();
           if(this.merchantProfilelistList.length == 0){
             this.MessageDataInfo = true; 
             this.loading = false;
           }
-        },1000)
+        },500)
       }
     )  
   }
@@ -87,6 +89,11 @@ export class MerchantprofilelistComponent implements OnInit {
     this.merchantProfilelistList = [];
     this.MessageDataInfo = true; 
     this.mypagination = false;
+  }
+
+  viewUser(id: number){
+    console.log(id);
+    this.router.navigate(['/dashboard/merchantprofilelist/view/'+id])
   }
 
 }

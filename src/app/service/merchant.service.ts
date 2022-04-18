@@ -28,6 +28,12 @@ export class MerchantService {
 
   }
 
+  // single data display
+  merchantSingleData(merchant_id: number): Observable<any>{
+    return this._http.get(`${baseUrl}single_merchant_details/${merchant_id}`, httpOptions)
+    catchError(this.handleError);
+  }
+
   private handleError(err: HttpErrorResponse){
 
     let errorMessage = '';
