@@ -13,7 +13,8 @@ import { LayoutModule } from './layout/layout.module';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    LayoutModule
   ]
 })
 export class AdminModule { }

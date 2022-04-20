@@ -39,8 +39,8 @@
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "src/assets/js/app1.js",
-                            "node_modules/feather-icons/dist/feather.min.js"
+                            "src/assets/js/app1_old.js"
+
 
                         ]
                     },
@@ -53,7 +53,7 @@
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
+                                    "maximumWarning": "4kb",
                                     "maximumError": "4kb"
                                 }
                             ],
