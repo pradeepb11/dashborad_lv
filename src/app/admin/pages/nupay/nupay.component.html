@@ -14,7 +14,7 @@
                     <div class="card shadow border flex-fill">
                         <div class="card-header pb-0">
 
-                            <h5 class="card-title mb-0">Latest Transition</h5>
+                            <h5 class="card-title mb-0"> Latest Transaction</h5>
                             <hr>
                             <form [formGroup]="filterForm">
 
@@ -22,7 +22,7 @@
                                     <!-- d-flex justify-content-center align-items-top -->
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Merchant Id  <span class="text-danger">*</span></label>
+                                            <label for="">Merchant ID  <span class="text-danger">*</span></label>
                                             <div class="cal-icon">
                                                 <input type="text" name="" class="form-control" formControlName="merchant_id" [ngClass]="{
                                                   'is-invalid': submitted && f['merchant_id'].errors && f['merchant_id'].touched,
@@ -105,7 +105,7 @@
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Transition Refence Number </label>
+                                            <label for="">Transaction Reference Number</label>
                                             <div class="cal-icon">
                                                 <input type="text" name="" class="form-control" formControlName="txnRefNo" autocomplete="off">
 
@@ -118,7 +118,7 @@
 
                                 </div>
                                 <div class="col-md-3 mthalf">
-                                    <button class="btn btn-primary me-2 mtminu20" [disabled]="!filterForm.valid" (click)="applyFilter()">sumbnit</button>
+                                    <button class="btn btn-primary me-2 mtminu20" [disabled]="!filterForm.valid" (click)="applyFilter()">submit </button>
                                     <button class="btn btn-secondary mtminu20" type="reset" (click)="resetDate()">Reset  </button>
                                 </div>
 
@@ -150,14 +150,14 @@
                                 <table class="table table-stripes table-bordered table-sm">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
+                                            <th>Log ID</th>
                                             <th>From</th>
                                             <th>Name</th>
                                             <th>Type</th>
                                             <th>Blob</th>
-                                            <th>Txn Ref</th>
+                                            <th>Transaction Reference No</th>
                                             <th>Merchant id</th>
-                                            <th>time</th>
+                                            <th>Time</th>
                                         </tr>
                                     </thead>
 
@@ -180,13 +180,20 @@
                                                 <td>{{item.log_blob }}</td>
                                                 <td>{{item.txnRefNo}}</td>
                                                 <td>{{item.merchant_id}}</td>
-                                                <td>{{item.timestamp }}</td>
+                                                <td>{{item.timestamp |  date : 'dd-MM-yyyy'}}</td>
                                             </tr>
 
                                             <ng-container *ngIf="MessageDataInfo">
                                                 <tr>
                                                     <td colspan="9" class="text-info text-center">
                                                         Please Select Input Field
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+                                            <ng-container *ngIf="MessageDataError">
+                                                <tr>
+                                                    <td colspan="9" class="text-info text-center">
+                                                       No date Found
                                                     </td>
                                                 </tr>
                                             </ng-container>

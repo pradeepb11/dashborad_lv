@@ -7,13 +7,17 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { OtpverificationComponent } from './otpverification/otpverification.component';
 
 
 @NgModule({
   declarations: [
     AuthComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ForgotpasswordComponent,
+    OtpverificationComponent
   ],
   imports: [
     CommonModule,

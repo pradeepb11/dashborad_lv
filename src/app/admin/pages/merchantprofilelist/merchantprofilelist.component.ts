@@ -5,6 +5,7 @@ import {MerchantService} from '../../../service/merchant.service';
 import {BehaviorSubject} from 'rxjs';
 import * as Feather from 'feather-icons';
 import { Router } from '@angular/router';
+import { Merchant } from 'src/app/interface/merchant';
 
 
 
@@ -25,6 +26,7 @@ export class MerchantprofilelistComponent implements OnInit {
 
   loading: boolean = false;
   MessageDataInfo: boolean = true;
+  MessageDataError: boolean = false;
   mypagination = false;
 
   constructor(
@@ -60,27 +62,41 @@ export class MerchantprofilelistComponent implements OnInit {
     .subscribe(
       (res) =>{
         console.log(res.response.data)
-        setTimeout(()=>{
-          this.loading = false;
-          this.MessageDataInfo = false;
-          this.merchantProfilelistList = res.response.data;
-          // console.log(this.merchantProfilelistList)
-          // this.total = res.response.data.total;
-          this.merchantProfilelistList = res.response.data;
-          this.mypagination = true;
-          
-        
-         
-          this.total = res.response.data.last_page;
-  
-  
-          this.filterFormMerchant.reset();
-          if(this.merchantProfilelistList.length == 0){
-            this.MessageDataInfo = true; 
+
+        if(res.response.data == null && res.response.data == undefined){
+          console.log('Error')
+          this.MessageDataError = true;
+          this.mypagination = false;
+        }
+          console.log('Work')
+          setTimeout(()=>{
             this.loading = false;
-          }
-        },500)
-      }
+            this.MessageDataInfo = false;
+           
+            this.merchantProfilelistList = res.response.data;
+            // console.log(this.merchantProfilelistList)
+            // this.total = res.response.data.total;
+            this.merchantProfilelistList = res.response.data;
+           
+            this.mypagination = true;
+            
+          
+           
+            // this.total = res.response.data.last_page;
+    
+    
+            this.filterFormMerchant.reset();
+            if(this.merchantProfilelistList.length == undefined){
+              this.MessageDataInfo = true; 
+              
+              this.loading = false;
+            }
+          },500)
+        }
+      
+        
+      
+      
     )  
   }
 
@@ -94,6 +110,12 @@ export class MerchantprofilelistComponent implements OnInit {
   viewUser(id: number){
     console.log(id);
     this.router.navigate(['/dashboard/merchantprofilelist/view/'+id])
+  }
+
+  EditMerchant(item:Merchant, id: number){
+    console.log(id)
+    console.log( this.router.navigate(['/dashboard/merchantprofilelist/edit/'+id]))
+   
   }
 
 }

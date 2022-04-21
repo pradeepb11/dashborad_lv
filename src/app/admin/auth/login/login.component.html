@@ -14,9 +14,9 @@
                         <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
                             <!-- username  -->
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="username">Username
+                                <label class="form-label" for="username">Email
                           </label>
-                                <input type="text" id="username" class="form-control" placeholder="Username" formControlName="username" [ngClass]="{
+                                <input type="text" id="username" class="form-control" placeholder="Email id" formControlName="username" [ngClass]="{
                                   'is-invalid': submitted && f['username'].errors && f['username'].touched,
                                   'is-valid': f['username'].touched && f['username'].valid 
                                   }" autocomplete="off" />
@@ -35,7 +35,7 @@
 
                                 <label class="form-label" for="password">Password</label>
                                 <div class="float-end">
-                                    <a href="" class="text-small text-primary an">
+                                    <a routerLink="./forgotpassword" class="text-small text-primary an">
                                 Forgot Password?
                               </a>
                                 </div>

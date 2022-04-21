@@ -27,6 +27,9 @@
                                     <div *ngIf="f['first_name'].errors?.['required']">
                                         Please Enter Your First Name!
                                     </div>
+                                    <div *ngIf="f['first_name'].errors?.['pattern']">
+                                        Please, Do Not Use Special Characters.
+                                    </div>
 
                                 </div>
 
@@ -43,7 +46,10 @@
                       }">
                                 <div *ngIf="f['last_name'].touched && f['last_name'].invalid" class="invalid-feedback">
                                     <div *ngIf="f['last_name'].errors?.['required']">
-                                        Please Enter Your Phone Number!
+                                        Please Enter Your Last Name!
+                                    </div>
+                                    <div *ngIf="f['last_name'].errors?.['pattern']">
+                                        Please, Do Not Use Special Characters.
                                     </div>
 
                                 </div>
@@ -127,11 +133,11 @@
 
                                 </div>
                                 <div class="posrelative">
-                                    <input [type]="show_button ? 'text' : 'password'" formControlName="confirm_password" class="form-control" autocomplete="off" id="password" [ngClass]="{
+                                    <input [type]="show_button_confirm ? 'text' : 'password'" formControlName="confirm_password" class="form-control" autocomplete="off" id="password" [ngClass]="{
                           'is-invalid': submitted && f['confirm_password'].errors && f['confirm_password'].touched,
                           'is-valid': f['confirm_password'].touched && f['confirm_password'].valid 
                           }">
-                                    <i class="posabso iconsright" [class]="show_eye ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPassword()"></i>
+                                    <i class="posabso iconsright" [class]="show_eye_confirm ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPasswordConfirm()"></i>
                                     <div *ngIf="f['confirm_password'].touched && f['confirm_password'].invalid" class="invalid-feedback">
                                         <div *ngIf="f['confirm_password'].errors?.['required']">
                                             Please Enter Your confirmpassword!
@@ -156,11 +162,16 @@
                 <span class="button__text me-3">Register Now</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
-                            <button class="btn btn-secondary ms-2" (click)="resetRegistration()">
+                            <button type="reset" class="btn btn-secondary ms-2">
                 <span class="button__text me-3">Reset</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
                         </div>
+                        <div class="divider text-center">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted">Already have an account? <a routerLink="./admin" class="ms-1"> Log in</a></p>
+                        </div> 
+                     
+                       
 
                     </div>
                 </div>

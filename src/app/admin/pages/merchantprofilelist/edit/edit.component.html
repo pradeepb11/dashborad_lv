@@ -1,0 +1,80 @@
+<div class="card">
+    <div class="card-header pb-0">
+        <h1 class="h3 mb-3"><strong>Merchant</strong> Profile Edit</h1>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-12 col-xxl-12">
+                <div class="card p-5">
+                    <form [formGroup]="merchantForm" (ngSubmit)="merchantEditOnSumbmit()">
+                        <div class="form-group">
+                            <input type="hidden" name="" formControlName="merchant_id">
+                            <label for="name">Payin Webhook </label>
+                            <!-- <span class="text-danger">*</span> -->
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="name" 
+                                   formControlName="return_url"
+                                   placeholder="Enter Payin Webhook"
+                                   [ngClass]="{
+                                       'is-invalid':submitted && f['return_url'].errors && f['return_url'].touched,
+                                       'is-valid': f['return_url'].touched && f['return_url'].valid
+                                   }"
+                                   >
+                                   <div *ngIf="f['return_url'].touched && f['return_url'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['return_url'].errors?.['required']">Payin Webhook  is Required</div>
+                                   </div>
+                        </div>
+    
+                        <div class="form-group">
+                           
+                            <label for="name">Payout Webhook </label>
+                            <!-- <span class="text-danger">*</span> -->
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="name" 
+                                   formControlName="payout_webhook"
+                                   placeholder="Enter Payout Webhook"
+                                   [ngClass]="{
+                                       'is-invalid':submitted && f['payout_webhook'].errors && f['payout_webhook'].touched,
+                                       'is-valid': f['payout_webhook'].touched && f['payout_webhook'].valid
+                                   }"
+                                   >
+                                   <div *ngIf="f['payout_webhook'].touched && f['payout_webhook'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['payout_webhook'].errors?.['required']">PayOut Webhook  is Required</div>
+                                   </div>
+                        </div>
+    
+                        <div class="form-group">
+                          
+                            <label for="name">Website Url </label>
+                            <!-- <span class="text-danger">*</span> -->
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="name" 
+                                   formControlName="url"
+                                   placeholder="Enter Payin Webhook"
+                                   [ngClass]="{
+                                       'is-invalid':submitted && f['url'].errors && f['url'].touched,
+                                       'is-valid': f['url'].touched && f['url'].valid
+                                   }"
+                                   >
+                                   <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                    <div *ngIf="f['url'].errors?.['required']">URL  is Required</div>
+                                   </div>
+                        </div>
+
+                        <div class="card-footer p-0">
+                            <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!merchantForm.valid">Update</button>
+                            <button class="btn btn-info float-end" (click)="backToHome()">Back to List</button>
+                            <button class="btn btn-secondary mtminu20" type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+               
+                </div>
+                </div>
+    </div>
+
+    </div>

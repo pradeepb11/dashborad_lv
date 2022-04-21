@@ -41,6 +41,7 @@ export class NupayComponent implements OnInit, AfterViewInit {
 
   loading: boolean = false;
   MessageDataInfo: boolean = true;
+  MessageDataError: boolean = false;
 
   dateTo = dayjs();
 
@@ -126,6 +127,8 @@ export class NupayComponent implements OnInit, AfterViewInit {
       setTimeout(()=>{
         this.loading = false;
         this.MessageDataInfo = false;
+        this.MessageDataError = true;
+        this.filterForm.reset();
         this.nupaytList = res.response.data.data;
         // console.log(this.nupaytList)
         // this.total = res.response.data.total;
@@ -135,11 +138,12 @@ export class NupayComponent implements OnInit, AfterViewInit {
       
        
         this.total = res.response.data.last_page;
-
+      
 
         // this.filterForm.reset();
         if(this.nupaytList.length == 0){
           this.MessageDataInfo = true; 
+          this.filterForm.reset();
           this.loading = false;
         }
       },1000)

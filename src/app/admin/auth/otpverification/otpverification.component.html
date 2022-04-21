@@ -1,0 +1,68 @@
+<div id="loginCon">
+    <div class="conteiner">
+        <div class="row">
+            <div class="login_box">
+                <div class="login_container">
+                    <div class="brand_company">
+                        <img src="./assets/images/paynet.png" style="width: 100px;" alt="">
+                        <a class="brand-link fs-1 text-center m-auto">
+                            <span class="brand-text font-weight-bold ms-3"> <span
+                                  class="brandCaptialW"></span> Dashboard</span>
+                        </a>
+                    </div>
+                    <div class="wrap_login card p-4 shadow-lg border rounded ">
+                        <form [formGroup]="forgotpasswordForm" (ngSubmit)="forgotpasswordSubmit()">
+                            <p class="text-center mb-3">We’ve sent a verification code to<span class="ms-2 text-info">pradeep.b********.com</span></p>
+
+                            <p class="mb-3">Enter OTP Code Here:</p>
+                            <!-- username  -->
+                            <div class="form-outline mb-4">
+                                <div class="fxt-transformY-50 fxt-transition-delay-1">
+									<div class="fxt-form-row d-flex">
+										<input type="text" class="fxt-form-col otp-input form-control" maxlength="1" required="required">
+										<input type="text" class="fxt-form-col otp-input form-control" maxlength="1" required="required">
+										<input type="text" class="fxt-form-col otp-input form-control" maxlength="1" required="required">
+										<input type="text" class="fxt-form-col otp-input form-control" maxlength="1" required="required">
+									</div>
+								</div>
+                           
+                               
+
+                            </div>
+                            <!-- / username  -->
+
+                           
+
+                            <!-- Submit button -->
+                            <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!forgotpasswordForm.valid">
+                                Verify</button>
+                            </div>
+
+                            <!-- <div class="divider d-flex align-items-center my-4">
+                                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                            </div> -->
+
+                            <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                                <a href="#!" class="text-dark"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="#!" class="text-dark"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                                <a href="#!" class="text-dark"><i class="fab fa-google fa-lg"></i></a>
+                            </div> -->
+
+                           
+                        </form>
+                        <!-- <ul class="login-menu">
+
+                            <li class="blue-login"><a routerLink="./register">Registration</a></li>
+                        </ul> -->
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

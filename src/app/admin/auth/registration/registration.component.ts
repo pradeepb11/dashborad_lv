@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RegistrationService } from 'src/app/service/registration.service';
 import { ConfirmedValidator } from '../../../helper/validation';
 import { NotificationService } from 'src/app/service/notification.service';
+import { FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +15,9 @@ export class RegistrationComponent implements OnInit {
   basicInfoRegForm: FormGroup;
   submitted = false;
   show_button: Boolean = false;
+  show_button_confirm: Boolean = false;
   show_eye: Boolean = false;
+  show_eye_confirm: Boolean = false;
 
   public hearList= [
     {name: 'Facebook'},
@@ -42,8 +45,8 @@ export class RegistrationComponent implements OnInit {
 
    setBasicInfoValidator() {
     this.basicInfoRegForm = this.formBuilder.group({
-      first_name: new FormControl('', Validators.required),
-      last_name: new FormControl('', Validators.required),
+      first_name: new FormControl('', [Validators.required, Validators.pattern('/^[a-zA-Z0-9!@#$%^&*()]+$/')]),
+      last_name: new FormControl('', [Validators.required, Validators.pattern('/^[a-zA-Z0-9!@#$%^&*()]+$/')]),
       mobile: new FormControl('', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       email: new FormControl('', [Validators.required, Validators.email, Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')]),
       password: new FormControl('', Validators.required),
@@ -105,9 +108,10 @@ export class RegistrationComponent implements OnInit {
     this.show_button = !this.show_button;
     this.show_eye = !this.show_eye;
   }
-
-  resetRegistration(){
-    this.basicInfoRegForm.reset();
+  showPasswordConfirm(){
+    this.show_button_confirm = !this.show_button_confirm;
+    this.show_eye_confirm = !this.show_eye_confirm;
   }
+
 
 }

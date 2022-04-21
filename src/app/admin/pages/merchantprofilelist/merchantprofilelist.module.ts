@@ -8,12 +8,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DpDatePickerModule } from 'ng2-date-picker';
-import { ViewComponent } from './view/view.component';
+import { EditComponent } from './edit/edit.component';
+
 
 @NgModule({
   declarations: [
     MerchantprofilelistComponent,
-    ViewComponent
+    EditComponent
   ],
   imports: [
     CommonModule,
