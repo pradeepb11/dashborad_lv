@@ -38,6 +38,7 @@ export class NupayComponent implements OnInit, AfterViewInit {
   p: number = 1;
   total: number = 0;
   filterTerm: string;
+  count: any;
 
   loading: boolean = false;
   MessageDataInfo: boolean = true;
@@ -122,17 +123,16 @@ export class NupayComponent implements OnInit, AfterViewInit {
   this.nupayService.nypaydatadaterangefilter(this.filterForm.value)
   .subscribe(
     (res) =>{
-      console.log(res.response.data)
+      // console.log(res.response.data)
       this.loading = true;
       setTimeout(()=>{
         this.loading = false;
         this.MessageDataInfo = false;
-        this.MessageDataError = true;
+        this.MessageDataError = false;
         this.filterForm.reset();
         this.nupaytList = res.response.data.data;
         // console.log(this.nupaytList)
         // this.total = res.response.data.total;
-        this.nupaytList = res.response.data.data;
         this.mypagination = true;
         
       

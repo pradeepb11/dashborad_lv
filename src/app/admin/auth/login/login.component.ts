@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
    setLoginValidation() {
     this.loginForm = this.fb.group({
       // email: new FormControl('', [Validators.required, Validators.email]),
-      username: new FormControl('', Validators.required),
+      username: new FormControl('', [Validators.required, Validators.email, Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')]),
       password: new FormControl('', Validators.required),
     })
   }
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
           this.notification.showError('', 'Username & Password Do not Match');
           this.loginForm.reset();
         }else if (res.response.status === 'success') {
-          this.notification.showSuccess('', 'Sucessfully Login');
+          this.notification.showSuccess('', 'Login Successfully');
           this.router.navigate(['/dashboard'], {relativeTo: this.route})
         } 
       

@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private merchantService: MerchantService,
     private formbuilder: FormBuilder,
-    private toastr: NotificationService
+    private notification: NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -62,6 +62,15 @@ export class EditComponent implements OnInit {
 
 
   merchantEditOnSumbmit(){
+    // console.log(this.merchantForm.value);
+    this.merchantService.merchantWebhookUpdate(this.merchantForm.value)
+    .subscribe(
+      (res) =>{
+        this.notification.showSuccess('', 'Merchant Update Successfully');
+        this.merchantForm.reset();
+        this.route.navigate(['/dashboard/merchantprofilelist'])
+      }
+    )
 
   }
 

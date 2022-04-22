@@ -10,6 +10,7 @@ const routes: Routes = [
   },
   
   { path: 'dashboard', loadChildren: () => import('./admin/pages/pages.module').then(m => m.PagesModule) },
+  
  
   
   

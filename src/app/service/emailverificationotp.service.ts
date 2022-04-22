@@ -15,34 +15,19 @@ const localUrl = `${environment.apiUrllocal}`
 @Injectable({
   providedIn: 'root'
 })
-export class MerchantService {
+export class EmailverificationotpService {
 
   constructor(
     private _http: HttpClient
   ) { }
 
 
-  merchantDataFilter(merchantinfo: merchantInfo): Observable<any>{
+  merchantDataFilter(emailverifyinfo: emailVerifyInfo): Observable<any>{
 
-    return this._http.post(`${localUrl}filter_merchant_list`, merchantinfo, httpOptions)
+    return this._http.post(`${localUrl}email_verification_list`, emailverifyinfo, httpOptions)
     catchError(this.handleError)
 
   }
-
-
-
-  // single data display
-  merchantSingleData(merchant_id: number): Observable<any>{
-    return this._http.get(`${localUrl}single_merchant_details/${merchant_id}`, httpOptions)
-    catchError(this.handleError);
-  }
-
-  // update merchant webhook 
-  merchantWebhookUpdate(merchantwebhook: merchantWebhook): Observable<any>{
-    return this._http.post<any>(`${localUrl}merchant_account_update`, merchantwebhook, httpOptions)
-    catchError(this.handleError)
-  }
-
 
   private handleError(err: HttpErrorResponse){
 
@@ -58,19 +43,10 @@ export class MerchantService {
     return throwError(errorMessage);
 }
 
+
 }
 
 
-export interface merchantInfo{
-  merchant_status: string;
-  merchant_id: string;
+export interface emailVerifyInfo{
   email_id: string;
 } 
-
-
-export interface merchantWebhook{
-  payout_webhook: string;
-  payin_webhook: string;
-  url: string;
-  merchant_id: number;
-}

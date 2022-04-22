@@ -7,22 +7,22 @@
                         <img src="./assets/images/paynet.png" style="width: 100px;" alt="">
                         <a class="brand-link fs-1 text-center m-auto">
                             <span class="brand-text font-weight-bold ms-3"> <span
-                                  class="brandCaptialW"></span> Dashboard</span>
+                                  class="brandCaptialW"></span> Login </span>
                         </a>
                     </div>
                     <div class="wrap_login card p-4 shadow-lg border rounded ">
                         <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
                             <!-- username  -->
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="username">Email
+                                <label class="form-label" for="username">Email <span class="text-danger">*</span>
                           </label>
-                                <input type="text" id="username" class="form-control" placeholder="Email id" formControlName="username" [ngClass]="{
+                                <input type="email" id="username" class="form-control" placeholder="Email id" formControlName="username" [ngClass]="{
                                   'is-invalid': submitted && f['username'].errors && f['username'].touched,
                                   'is-valid': f['username'].touched && f['username'].valid 
                                   }" autocomplete="off" />
                                 <div *ngIf="f['username'].touched && f['username'].invalid" class="invalid-feedback">
                                     <div *ngIf="f['username'].errors?.['required']">
-                                        Please Enter Your Username!
+                                        Please Enter Your Email Id!
                                     </div>
 
                                 </div>
@@ -33,7 +33,7 @@
                             <!-- Password input -->
                             <div class="form-outline mb-4 posrelative">
 
-                                <label class="form-label" for="password">Password</label>
+                                <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
                                 <div class="float-end">
                                     <a routerLink="./forgotpassword" class="text-small text-primary an">
                                 Forgot Password?

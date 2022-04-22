@@ -18,7 +18,7 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="first_name">Enter Your First Name</label>
+                                <label for="first_name">Enter Your First Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" formControlName="first_name" autocomplete="off" id="first_name" [ngClass]="{
                       'is-invalid': submitted && f['first_name'].errors && f['first_name'].touched,
                       'is-valid': f['first_name'].touched && f['first_name'].valid 
@@ -39,7 +39,7 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="username">Enter Your Last Name</label>
+                                <label for="username">Enter Your Last Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" formControlName="last_name" autocomplete="off" id="username" [ngClass]="{
                       'is-invalid': submitted && f['last_name'].errors && f['last_name'].touched,
                       'is-valid': f['last_name'].touched && f['last_name'].valid 
@@ -58,7 +58,7 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="username">Enter Your Mobile Number</label>
+                                <label for="username">Enter Your Mobile Number <span class="text-danger">*</span></label>
                                 <input type="number" class="form-control" formControlName="mobile" autocomplete="off" id="username" [ngClass]="{
                       'is-invalid': submitted && f['mobile'].errors && f['mobile'].touched,
                       'is-valid': f['mobile'].touched && f['mobile'].valid 
@@ -78,7 +78,7 @@
 
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="username">Enter Your Email Id</label>
+                                <label for="username">Enter Your Email Id <span class="text-danger">*</span></label>
                                 <input type="email" class="form-control" formControlName="email" autocomplete="off" id="username" [ngClass]="{
                       'is-invalid': submitted && f['email'].errors && f['email'].touched,
                       'is-valid': f['email'].touched && f['email'].valid 
@@ -104,7 +104,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <div class="d-block mb-1">
-                                    <label for="password" class="control-label ">Password</label>
+                                    <label for="password" class="control-label ">Password <span class="text-danger">*</span></label>
 
                                 </div>
                                 <div class="form-outline mb-4 posrelative">
@@ -129,7 +129,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <div class="d-block mb-1">
-                                    <label for="password" class="control-label ">Confirm Password</label>
+                                    <label for="password" class="control-label ">Confirm Password <span class="text-danger">*</span></label>
 
                                 </div>
                                 <div class="posrelative">
@@ -140,7 +140,7 @@
                                     <i class="posabso iconsright" [class]="show_eye_confirm ? 'fas ms-2 fa-eye' : 'fas ms-2 fa-eye-slash'" (click)="showPasswordConfirm()"></i>
                                     <div *ngIf="f['confirm_password'].touched && f['confirm_password'].invalid" class="invalid-feedback">
                                         <div *ngIf="f['confirm_password'].errors?.['required']">
-                                            Please Enter Your confirmpassword!
+                                            Please Enter Your Confirm Password!
                                         </div>
                                         <div *ngIf="f['confirm_password'].errors?.['confirmedValidator']">Password and Confirm Password must be match.
                                         </div>
@@ -159,19 +159,20 @@
 
                         <div class="form-group  ">
                             <button class="btn btn-primary" [disabled]="!basicInfoRegForm.valid">
-                <span class="button__text me-3">Register Now</span>
-                <i class="button__icon fas fa-chevron-right"></i>
+                <span class="button__text ">Register Now</span>
+                <!-- <i class="button__icon fas fa-chevron-right"></i> -->
               </button>
                             <button type="reset" class="btn btn-secondary ms-2">
-                <span class="button__text me-3">Reset</span>
-                <i class="button__icon fas fa-chevron-right"></i>
+                <span class="button__text ">Reset</span>
+                <!-- <i class="button__icon fas fa-chevron-right"></i> -->
               </button>
                         </div>
+                        <hr>
                         <div class="divider text-center">
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">Already have an account? <a routerLink="./admin" class="ms-1"> Log in</a></p>
-                        </div> 
-                     
-                       
+                        </div>
+
+
 
                     </div>
                 </div>

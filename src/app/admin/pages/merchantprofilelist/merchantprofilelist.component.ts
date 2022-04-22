@@ -76,7 +76,6 @@ export class MerchantprofilelistComponent implements OnInit {
             this.merchantProfilelistList = res.response.data;
             // console.log(this.merchantProfilelistList)
             // this.total = res.response.data.total;
-            this.merchantProfilelistList = res.response.data;
            
             this.mypagination = true;
             
