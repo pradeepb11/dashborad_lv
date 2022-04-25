@@ -9,7 +9,7 @@ const httpOptions = {
 };
 
 const baseUrl = `${environment.apiUrl}`
-const localUrl = `${environment.apiUrllocal}`
+// const localUrl = `${environment.apiUrllocal}`
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +22,13 @@ export class MultipleloginallowService {
 
 
     retriveAllmultipleloginallow(): Observable<any>{
-      return this._http.get<any>(`${localUrl}login_failed_data`, httpOptions)
+      return this._http.get<any>(`${baseUrl}login_failed_data`, httpOptions)
       catchError(this.handleError)
 
     }
 
     loginAllow(user_id: number): Observable<any>{
-      return this._http.post<any>(`${localUrl}multiple_login_allow`, {user_id}, httpOptions)
+      return this._http.post<any>(`${baseUrl}multiple_login_allow`, {user_id}, httpOptions)
       catchError(this.handleError)
     }
 

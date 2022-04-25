@@ -123,34 +123,44 @@ export class NupayComponent implements OnInit, AfterViewInit {
   this.nupayService.nypaydatadaterangefilter(this.filterForm.value)
   .subscribe(
     (res) =>{
-      // console.log(res.response.data)
-      this.loading = true;
-      setTimeout(()=>{
+      console.log(res)
+      if(res.response.status == 'failure'){
         this.loading = false;
+        this.MessageDataError = true;
         this.MessageDataInfo = false;
-        this.MessageDataError = false;
+        this.mypagination = false;
         this.filterForm.reset();
-        this.nupaytList = res.response.data.data;
-        // console.log(this.nupaytList)
-        // this.total = res.response.data.total;
-        this.mypagination = true;
-        
-      
-       
-        this.total = res.response.data.last_page;
-      
-
-        // this.filterForm.reset();
-        if(this.nupaytList.length == 0){
-          this.MessageDataInfo = true; 
-          this.filterForm.reset();
+        this.nupaytList = [];
+      } else if(res.response.status == 'Success'){
+        console.log('Done messageDataError');
+        this.loading = true;
+        setTimeout(()=>{
           this.loading = false;
-        }
-      },1000)
-      // let start_Date = this.datePipe.transform(this.start_date, 'YYYY-MM-d');
-      // let end_Date = this.datePipe.transform(this.end_date, 'YYYY-MM-d');
-      // let start_Date = this.datePipe.transform(this.start_date, 'dd-MM-YYYY');
-      // let end_Date = this.datePipe.transform(this.end_date, 'dd-MM-YYYY');
+          this.MessageDataInfo = false;
+          this.MessageDataError = false;
+          this.nupaytList = res.response.data.data;
+          // console.log(this.nupaytList)
+          // this.total = res.response.data.total;
+          this.mypagination = true;
+          
+        
+         
+          this.total = res.response.data.last_page;
+        
+  
+          // // this.filterForm.reset();
+          // if(this.nupaytList.length == 0 && this.nupaytList == []){
+          //   this.MessageDataInfo = true; 
+          //   this.MessageDataError = true;
+          //   this.filterForm.reset();
+          //   this.loading = false;
+          // }
+        },1000)
+      }
+     
+
+     
+     
       
     }
   )
@@ -161,6 +171,7 @@ export class NupayComponent implements OnInit, AfterViewInit {
     this.filterForm.reset();
     this.nupaytList = [];
     this.MessageDataInfo = true; 
+    this.MessageDataError = false;
     this.mypagination = false;
     // this.getallDataProduct();
   }

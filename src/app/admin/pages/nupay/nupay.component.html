@@ -143,11 +143,11 @@
                                     <div class="col-sm-2">
                                         <div class="form-group">
 
-                                            <input type="text" class="form-control" placeholder="Search..." name="customer" [(ngModel)]="filterTerm">
+                                            <input type="text" class="form-control w-100" placeholder="Search..." name="customer" [(ngModel)]="filterTerm">
                                         </div>
                                     </div>
                                 </div>
-                                <table class="table table-stripes table-bordered table-sm">
+                                <table class="table table-stripes table-bordered table-sm" id="nupayDataTbl">
                                     <thead>
                                         <tr>
                                             <th>Log ID</th>
@@ -179,8 +179,8 @@
                                                 <td>{{item.log_type}}</td>
                                                 <td>{{item.log_blob }}</td>
                                                 <td>{{item.txnRefNo}}</td>
-                                                <td>{{item.merchant_id}}</td>
-                                                <td>{{item.timestamp |  date : 'dd-MM-yyyy'}}</td>
+                                                <td class="text-center">{{item.merchant_id}}</td>
+                                                <td>{{item.timestamp }}</td>
                                             </tr>
 
                                             <ng-container *ngIf="MessageDataInfo">
@@ -193,7 +193,7 @@
                                             <ng-container *ngIf="MessageDataError">
                                                 <tr>
                                                     <td colspan="9" class="text-info text-center">
-                                                       No date Found
+                                                        No date Found
                                                     </td>
                                                 </tr>
                                             </ng-container>

@@ -136,7 +136,7 @@
                                             <th>Store Name</th>
                                             <th>Merchant Name</th>
                                             <th>Email</th>
-                                            <th>Status</th>
+                                            <th class="text-center">Status</th>
                                             <th>Application Date</th>
                                             <th>Profile</th>
                                         </tr>
@@ -158,9 +158,9 @@
                                                 <td>{{item.merchant_title}}</td>
                                                 <td>{{item.name}}</td>
                                                 <td>{{item.email}}</td>
-                                                <td class="badge text-white mt-2" [ngClass]="{'bg-success text-white': item.status_title ==='Active', ' bg-primary text-white':item.status_title === 'Demo', 'bg-danger text-white':item.status_title ==='Closed', 'bg-info ':item.status_title === 'Activatation Step 1 - Sales'}">{{item.status_title }}</td>
-                                                <td>{{item.datetime  }}</td>
-                                                <td>
+                                                <td class="badge text-dark mt-2 text-center" [ngClass]="{'bg-success text-white': item.status_title ==='Active', ' bg-primary text-white':item.status_title === 'Demo', 'bg-danger text-white':item.status_title ==='Closed', 'bg-info ':item.status_title === 'Activatation Step 1 - Sales'}">{{item.status_title }}</td>
+                                                <td>{{item.datetime }}</td>
+                                                <td class="text-center">
                                                     <div class="btn-group">
                                                         <a (click)="EditMerchant(item, item.merchant_id)" class="bg-primary p-1 text-white rounded"> <i class="fas fa-pen-to-square fa-fw"></i></a>
                                                     </div>

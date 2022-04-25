@@ -63,6 +63,7 @@ export class MultipleloginallowComponent implements OnInit {
     )
   }
 
+  // chekbox event 
   fieldsChange(values:any):void {
 
     if (values.target.checked) {
@@ -77,6 +78,20 @@ export class MultipleloginallowComponent implements OnInit {
         }
       )
    }
+  }
+
+  // btn click event
+  allowLogin(user_id: number, item:any){
+    // console.log(user_id, item);
+    this.mtploginallowService.loginAllow(user_id)
+    .subscribe(
+      (res) =>{
+        console.log(res);
+        this.notification.showSuccess('', 'Login Allow Successfully');
+
+        this.retrivewAllData();
+      }
+    )
   }
 
 }

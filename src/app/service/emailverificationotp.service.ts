@@ -10,7 +10,7 @@ const httpOptions = {
 
 
 const baseUrl = `${environment.apiUrl}`
-const localUrl = `${environment.apiUrllocal}`
+// const baseUrl = `${environment.apiUrllocal}`
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +24,17 @@ export class EmailverificationotpService {
 
   merchantDataFilter(emailverifyinfo: emailVerifyInfo): Observable<any>{
 
-    return this._http.post(`${localUrl}email_verification_list`, emailverifyinfo, httpOptions)
+    return this._http.post(`${baseUrl}email_verification_list`, emailverifyinfo, httpOptions)
     catchError(this.handleError)
 
   }
+
+  sendEmailData(sendemail: sendEmailInfo): Observable<any>{
+    return this._http.post(`${baseUrl}send_email`, sendemail, httpOptions)
+    catchError(this.handleError)
+  }
+
+ 
 
   private handleError(err: HttpErrorResponse){
 
@@ -50,3 +57,22 @@ export class EmailverificationotpService {
 export interface emailVerifyInfo{
   email_id: string;
 } 
+
+export interface sendEmailInfo{
+  sender_id: string;
+  receiver_id: string;
+  body: string;
+  subject: string;
+  sender_name: string;
+  receiver_name: string;
+} 
+
+export interface verifiactionEmail{
+  code: number;
+  email: string;
+  email_verification_id: string;
+  name: string;
+  reserved: string;
+  timestamp: string;
+  user_id: string;
+}

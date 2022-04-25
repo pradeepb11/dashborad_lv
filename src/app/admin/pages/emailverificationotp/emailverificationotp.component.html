@@ -85,10 +85,11 @@
                                         <tr>
                                             <!-- <th>User Id</th> -->
                                             <th>Name</th>
-                                            <th>Verification Id</th>
+                                            <!-- <th>Verification Id</th> -->
                                             <th>Email</th>
                                             <th>Time</th>
                                             <th>Code</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
 
@@ -107,10 +108,11 @@
 
                                                 <!-- <td>{{item.user_id}}</td> -->
                                                 <td>{{item.name}}</td>
-                                                <td>{{item.email_verification_id}}</td>
+                                                <!-- <td>{{item.email_verification_id}}</td> -->
                                                 <td>{{item.email}}</td>
                                                 <td>{{item.timestamp | date: 'dd-MM-yyyy' }}</td>
                                                 <td>{{item.code}}</td>
+                                                <td class="text-center "><button class="badge btn-primary border-0" (click)="sendEmailverification(item, item.user_id)">Send Email</button></td>
                                             </tr>
 
                                             <ng-container *ngIf="MessageDataInfo">

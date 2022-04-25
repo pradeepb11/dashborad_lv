@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrllocal: 'http://10.0.2.123/paynet_lv_api/public/index.php/api/v1/',
+  // apiUrllocal: 'http://10.0.2.123/paynet_lv_api/public/index.php/api/v1/',
      apiUrl : 'https://dashboard.paynet.co.in/dashboard-api/public/index.php/api/v1/'
   // apiUrl :'http://localhost:3003/api/v1/'
 };

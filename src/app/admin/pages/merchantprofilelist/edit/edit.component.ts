@@ -51,9 +51,9 @@ export class EditComponent implements OnInit {
   setUserForm(){
     this.merchantForm = this.formbuilder.group({
       merchant_id: new FormControl(),
-      return_url: new FormControl('', Validators.required),
-      payout_webhook: new FormControl('', Validators.required),
-      url: new FormControl('', Validators.required),
+      return_url: new FormControl(''),
+      payout_webhook: new FormControl(''),
+      url: new FormControl(''),
      
     })
   }
@@ -66,7 +66,7 @@ export class EditComponent implements OnInit {
     this.merchantService.merchantWebhookUpdate(this.merchantForm.value)
     .subscribe(
       (res) =>{
-        this.notification.showSuccess('', 'Merchant Update Successfully');
+        this.notification.showSuccess('', 'Merchant updated successfully');
         this.merchantForm.reset();
         this.route.navigate(['/dashboard/merchantprofilelist'])
       }

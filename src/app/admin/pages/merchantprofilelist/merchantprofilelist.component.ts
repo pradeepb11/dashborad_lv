@@ -61,29 +61,14 @@ export class MerchantprofilelistComponent implements OnInit {
     this.merchantService.merchantDataFilter(this.filterFormMerchant.value)
     .subscribe(
       (res) =>{
-        console.log(res.response.data)
-
-        if(res.response.data == null && res.response.data == undefined){
-          console.log('Error')
-          this.MessageDataError = true;
-          this.mypagination = false;
-        }
-          console.log('Work')
+        console.log(res)
+       if(res.response.status == 'Success' ){
           setTimeout(()=>{
             this.loading = false;
             this.MessageDataInfo = false;
-           
+            this.MessageDataError = false;
             this.merchantProfilelistList = res.response.data;
-            // console.log(this.merchantProfilelistList)
-            // this.total = res.response.data.total;
-           
             this.mypagination = true;
-            
-          
-           
-            // this.total = res.response.data.last_page;
-    
-    
             this.filterFormMerchant.reset();
             if(this.merchantProfilelistList.length == undefined){
               this.MessageDataInfo = true; 
@@ -91,6 +76,15 @@ export class MerchantprofilelistComponent implements OnInit {
               this.loading = false;
             }
           },500)
+        }else if(res.response.status == 'failure'){
+          this.loading = false;
+          this.MessageDataError = true;
+          this.MessageDataInfo = false;
+          this.merchantProfilelistList =[];
+          this.filterFormMerchant.reset();
+        }
+       
+         
         }
       
         
@@ -103,6 +97,7 @@ export class MerchantprofilelistComponent implements OnInit {
     this.filterFormMerchant.reset();
     this.merchantProfilelistList = [];
     this.MessageDataInfo = true; 
+    this.MessageDataError = false;
     this.mypagination = false;
   }
 

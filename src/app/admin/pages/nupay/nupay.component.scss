@@ -4,7 +4,8 @@
             th {
                 &:nth-child(5) {
                     width: 50% !important;
-                    white-space: pre-wrap;
+                    white-space: pre-wrap !important;
+                    // word-wrap: break-word;
                     // background-color: red;
                 }
             }
@@ -14,8 +15,9 @@
         tr {
             td {
                 &:nth-child(5) {
-                    // width: 100px;
-                    white-space: pre-wrap;
+                    width: 50% !important;
+                    white-space: pre-wrap !important;
+                    // word-wrap: break-word;
                     // background-color: red;
                 }
             }
