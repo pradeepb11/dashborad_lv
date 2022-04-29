@@ -31,6 +31,9 @@ export class EditComponent implements OnInit {
   currencyPipe: any;
   totalSum: number;
 
+  //
+  FirstNumber1:number;
+  SecondNumber1:number;
 
   constructor(
     private route: Router,
@@ -83,8 +86,9 @@ export class EditComponent implements OnInit {
       }
     )
 
+    
 
-  
+    
 
   }
 
@@ -155,7 +159,7 @@ export class EditComponent implements OnInit {
       // merchant_id: new FormControl(''),
       setupfeesamtcharge: new FormControl(''),
       gst: new FormControl(''),
-      unitTotalPrice: new FormControl('')
+      // unitTotalPrice: new FormControl('')
 
     })
   }
