@@ -11,6 +11,9 @@ const routes: Routes = [
       { path: 'merchantprofilelist', loadChildren: () => import('./merchantprofilelist/merchantprofilelist.module').then(m => m.MerchantprofilelistModule), canActivate:[AuthGuard], data:{ title: ' Merchant Profile List'}  },
       { path: 'multipleloginallow', loadChildren: () => import('./multipleloginallow/multipleloginallow.module').then(m => m.MultipleloginallowModule), data:{ title: ' Multiple Login Allow'}  },
       { path: 'mailverificationotp', loadChildren: () => import('./emailverificationotp/emailverificationotp.module').then(m => m.EmailverificationotpModule), data:{ title: ' Email Verification OTP'}  },
+      { path: 'amtreport', loadChildren: () => import('./amtreport/amtreport.module').then(m => m.AmtreportModule), data:{ title: ' Amount Report'} },
+      { path: 'payoutcharges', loadChildren: () => import('./payoutcharges/payoutcharges.module').then(m => m.PayoutchargesModule), data:{ title: 'Daily Payout Charges'} },
+      { path: 'nupaytransaction', loadChildren: () => import('./nupaytransaction/nupaytransaction.module').then(m => m.NupaytransactionModule), data:{ title: 'Nupay Transaction Log'} },
       
   ]}
 ];

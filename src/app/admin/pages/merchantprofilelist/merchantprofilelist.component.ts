@@ -22,7 +22,7 @@ export class MerchantprofilelistComponent implements OnInit {
   paginationList:any[];
   p: number = 1;
   total: number = 0;
-  filterTerm: string;
+  filterTerm!: string;
 
   loading: boolean = false;
   MessageDataInfo: boolean = true;
@@ -37,6 +37,7 @@ export class MerchantprofilelistComponent implements OnInit {
 
   ngOnInit(): void {
     this.setfilterFormValidate();
+   
   }
 
   setfilterFormValidate(){
@@ -69,7 +70,8 @@ export class MerchantprofilelistComponent implements OnInit {
             this.MessageDataError = false;
             this.merchantProfilelistList = res.response.data;
             this.mypagination = true;
-            this.filterFormMerchant.reset();
+            // this.filterFormMerchant.reset();
+            // console.log(this.merchantProfilelistList.length);
             if(this.merchantProfilelistList.length == undefined){
               this.MessageDataInfo = true; 
               

@@ -39,10 +39,11 @@ export class NupayComponent implements OnInit, AfterViewInit {
   total: number = 0;
   filterTerm: string;
   count: any;
-
+  filterBy:any;
   loading: boolean = false;
   MessageDataInfo: boolean = true;
   MessageDataError: boolean = false;
+  searchText: boolean = true;
 
   dateTo = dayjs();
 
@@ -175,5 +176,7 @@ export class NupayComponent implements OnInit, AfterViewInit {
     this.mypagination = false;
     // this.getallDataProduct();
   }
+
+ 
 
 }

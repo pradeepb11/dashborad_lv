@@ -45,8 +45,8 @@ export class RegistrationComponent implements OnInit {
 
    setBasicInfoValidator() {
     this.basicInfoRegForm = this.formBuilder.group({
-      first_name: new FormControl('', [Validators.required, Validators.pattern('/^[a-zA-Z0-9!@#$%^&*()]+$/')]),
-      last_name: new FormControl('', [Validators.required, Validators.pattern('/^[a-zA-Z0-9!@#$%^&*()]+$/')]),
+      first_name: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-zA-Z])[a-zA-Z0-9]+$')]),
+      last_name: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-zA-Z])[a-zA-Z0-9]+$')]),
       mobile: new FormControl('', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       email: new FormControl('', [Validators.required, Validators.email, Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')]),
       password: new FormControl('', Validators.required),

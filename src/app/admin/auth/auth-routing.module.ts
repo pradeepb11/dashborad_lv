@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
   {path:'forgotpassword', component: ForgotpasswordComponent},
   {path:'otpverification', component: OtpverificationComponent}
- 
+  
   
 ];
 

@@ -42,7 +42,8 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.token.signOut();
-    this.router.navigate(['/admin'])
+    this.router.navigate(['/dashboard-ui/#/admin']);
+    location.href='/dashboard-ui/#/admin';
   }
 
 }

@@ -1,0 +1,160 @@
+<div class="">
+
+    <div class="card">
+        <div class="card-header pb-0">
+            <h1 class="h3 mb-3"><strong></strong> Data</h1>
+        </div>
+        <div class="card-body p-0">
+
+
+
+
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xxl-12 d-flex">
+                    <div class="card shadow border flex-fill">
+
+
+                        <div>
+
+
+                            <div class="table-responsive p-2" style="overflow-x:auto;">
+                                <div class="row p-0 m-0">
+                                    <div class="col-sm-10">
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <!-- <input type="text" class="form-control w-100" placeholder="Search..." name="customer" [(ngModel)]="filterTerm"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-stripes table-bordered table-sm" style="background-color: #fff;border: 1px solid #e1e1e1;">
+                                    <thead style="background-color: #fff;border: 1px solid #e1e1e1; ">
+                                        <tr style="border: 1px solid #e1e1e1;">
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Amount</th>
+                                            <th>Charges</th>
+                                            <th>Net Amount</th>
+                                            <th>Variance Amount</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Final Date</th>
+                                            <th>Merchant ID</th>
+                                            <th>Merchant Name</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+
+                                    </thead>
+
+
+
+                                    <tbody>
+
+                                        <!-- <tr *ngFor="let item of amtReportList;  let i = index">
+                                            <td [colSpan]="item.Column1==null ? '0' : '1'" [rowSpan]="item.Column1==null ? '1' : '2'">{{item.Column1}}</td>
+                                            <td [colSpan]="item.Column1==null ? '1' : '1'" [rowSpan]="item.Column1==null ? '1' : '1'">{{item.Column2}}</td>
+                                            <td [colSpan]="item.Column1==null ? '1' : '1'" [rowSpan]="item.Column1==null ? '2' : '1'">{{item.Column3}}</td>
+                                            <td [colSpan]="item.Column1==null ? '0' : '1'">{{item.Column4}}</td>
+                                            <td [colSpan]="item.Column1==null ? '0' : '1'">{{item.sum}}</td>
+                                            <td [colSpan]="item.Column1==null ? '0' : '1'">{{item.Column6}}</td>
+                                            <td [colSpan]="item.Column1==null ? '0' : '1'">{{item.Column7}}</td>
+                                            <td [colSpan]="item.Column1==null ? '0' : '1'">{{item.Column8 }}</td>
+                                          
+                                        </tr> -->
+
+                                        <tr *ngFor="let item of amtReportList;  let i = index">
+                                            <td [rowSpan]="item.Column1=='' ? '1' : '1'" [colSpan]="item.Column1=='' ? '0' : '1'">{{item.Column1}}</td>
+                                            <td [rowSpan]="item.Column1=='' ? '1' : '1'">{{item.Column2}}</td>
+                                            <td>{{item.Column3}}</td>
+                                            <td>{{item.Column4}}</td>
+                                            <td>{{item.sum}}</td>
+                                            <td>{{item.Column6}}</td>
+                                            <td>{{item.Column7}}</td>
+                                            <td>{{item.Column8 }}</td>
+                                            <!-- <td>{{item.sum}}</td> -->
+                                        </tr>
+                                        <!-- <tr class="text-center" role="status" *ngIf="loading; else showWhenLoaded">
+                                          <td colspan="9" class="text-center p-0">
+                                              <div class="spinner-border text-primary text-center"></div>
+                                          </td>
+                                      </tr> -->
+
+                                        <ng-template #showWhenLoaded>
+                                            <!-- | paginate: { itemsPerPage:10, currentPage: p } -->
+                                            <!-- <tr *ngFor="let item of amtReportList">
+                                                <td>{{item.nupay_log_id}}</td>
+                                                <td>{{item.log_from}}</td>
+                                                <td>{{item.log_name}}</td>
+                                                <td>{{item.log_type}}</td>
+                                                <td>{{item.log_blob }}</td>
+                                                <td>{{item.txnRefNo}}</td>
+                                                <td class="text-center">{{item.merchant_id}}</td>
+                                                <td>{{item.timestamp }}</td>
+                                            </tr> -->
+
+                                            <!-- <ng-container *ngIf="MessageDataInfo">
+                                              <tr>
+                                                  <td colspan="9" class="text-info text-center">
+                                                      Please Select Input Field
+                                                  </td>
+                                              </tr>
+                                          </ng-container> -->
+                                            <!-- <ng-container *ngIf="MessageDataError">
+                                              <tr>
+                                                  <td colspan="9" class="text-info text-center">
+                                                      No date Found
+                                                  </td>
+                                              </tr>
+                                          </ng-container> -->
+                                        </ng-template>
+                                    </tbody>
+
+
+
+
+
+
+                                </table>
+                                <div class="float-end mt-2  pt-3">
+                                    <!-- <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+
+
+                                    <li [ngClass]="{ 'custom-disabled active': currentPageNumber === page }" class="page-item" *ngFor="let page of paginationList">
+                                        <a class="page-link" routerLink="{{page.index}}">{{
+                                      page.label
+                                    }}</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="" (click)="getData()"></a>
+                                    </li>
+
+
+
+                                </ul>
+                            </nav> -->
+                                    <!-- <pagination-controls (pageChange)="pageChangeEvent($event)" *ngIf="mypagination"></pagination-controls> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

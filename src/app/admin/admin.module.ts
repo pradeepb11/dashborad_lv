@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { LayoutModule } from './layout/layout.module';
-
+import { ModalModule} from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { LayoutModule } from './layout/layout.module';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ModalModule.forRoot()
   ]
 })
 export class AdminModule { }

@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DpDatePickerModule } from 'ng2-date-picker';
+import { ModalModule} from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DpDatePickerModule } from 'ng2-date-picker';
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    DpDatePickerModule
+    DpDatePickerModule,
+    ModalModule.forRoot()
   ]
 })
 export class MultipleloginallowModule { }

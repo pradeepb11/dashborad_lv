@@ -3,6 +3,14 @@ body {
     background-color: #fff;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
 #nupayDataTbl {
     thead {
         tr {
@@ -90,6 +98,21 @@ textarea.ng-invalid.ng-touched {
 
 .invalid-feedback {
     display: block;
+}
+
+.bgred-100 {
+    background-color: #fecba1 !important;
+    color: #000 !important;
+}
+
+.bgred-400 {
+    background-color: #e35d6a !important;
+    color: #fff !important;
+}
+
+.bggray-300 {
+    background-color: #dee2e6 !important;
+    color: #000 !important;
 }
 
 @import './assets/sass/sidebar';

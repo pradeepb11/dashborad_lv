@@ -23,7 +23,6 @@ export class MerchantService {
 
 
   merchantDataFilter(merchantinfo: merchantInfo): Observable<any>{
-
     return this._http.post(`${baseUrl}filter_merchant_list`, merchantinfo, httpOptions)
     catchError(this.handleError)
 
@@ -33,13 +32,20 @@ export class MerchantService {
 
   // single data display
   merchantSingleData(merchant_id: number): Observable<any>{
-    return this._http.get(`${baseUrl}single_merchant_details/${merchant_id}`, httpOptions)
+    return this._http.get(`http://10.0.2.123/paynet_lv_api/public/index.php/api/v1/single_merchant_details/${merchant_id}`, httpOptions)
     catchError(this.handleError);
-  }
+  } 
 
+  
   // update merchant webhook 
   merchantWebhookUpdate(merchantwebhook: merchantWebhook): Observable<any>{
     return this._http.post<any>(`${baseUrl}merchant_account_update`, merchantwebhook, httpOptions)
+    catchError(this.handleError)
+  }
+
+  //merchant Payment Proccessor  CC, NB, DC, UPI
+  paymentProccessorMerchant(data: any):Observable<any>{
+    return this._http.put<any>(`${baseUrl}merchant_processor`, data, httpOptions)
     catchError(this.handleError)
   }
 

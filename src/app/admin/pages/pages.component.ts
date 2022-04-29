@@ -34,7 +34,7 @@ export class PagesComponent implements OnInit, AfterViewInit {
       })
   ).subscribe( (data: any) => {
       if (data) {
-          this.titleService.setTitle('Dashboard' + '-  '+ data);
+          this.titleService.setTitle('Paynet' + '-  '+ data);
       }
   });
     

@@ -1,49 +1,378 @@
+<h1 class="h3 mb-3"><strong>Merchant</strong> Profile Edit</h1>
 <div class="card">
     <div class="card-header pb-0">
-        <h1 class="h3 mb-3"><strong>Merchant</strong> Profile Edit</h1>
+
     </div>
 
     <div class="card-body p-0">
         <div class="row">
             <div class="col-12 col-sm-12 col-lg-12 col-xxl-12">
-                <div class="card p-5">
-                    <form [formGroup]="merchantForm" (ngSubmit)="merchantEditOnSumbmit()">
-                        <div class="form-group">
-                            <input type="hidden" name="" formControlName="merchant_id">
-                            <label for="name">Payin Webhook </label>
-                            <!-- <span class="text-danger">*</span> -->
-                            <input type="text" class="form-control" id="name" formControlName="return_url" placeholder="Enter Payin Webhook">
-                            <!-- <div *ngIf="f['return_url'].touched && f['return_url'].invalid" class="invalid-feedback">
-                                <div *ngIf="f['return_url'].errors?.['required']">Payin Webhook is Required</div>
-                            </div> -->
+                <div class="card ">
+                    <div class="accordion" id="accordionExample">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             URL Configuration
+                            </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <form [formGroup]="merchantForm" (ngSubmit)="merchantEditOnSumbmit()">
+                                        <div class="form-group">
+                                            <input type="hidden" name="" formControlName="merchant_id">
+                                            <label for="name">Payin Webhook </label>
+                                            <!-- <span class="text-danger">*</span> -->
+                                            <input type="text" class="form-control" id="name" formControlName="return_url" placeholder="Enter Payin Webhook">
+                                            <!-- <div *ngIf="f['return_url'].touched && f['return_url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['return_url'].errors?.['required']">Payin Webhook is Required</div>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="name">Payout Webhook </label>
+                                            <!-- <span class="text-danger">*</span> -->
+                                            <input type="text" class="form-control" id="name" formControlName="payout_webhook" placeholder="Enter Payout Webhook">
+                                            <!-- <div *ngIf="f['payout_webhook'].touched && f['payout_webhook'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['payout_webhook'].errors?.['required']">PayOut Webhook is Required</div>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="name">Website Url </label>
+                                            <!-- <span class="text-danger">*</span> -->
+                                            <input type="text" class="form-control" id="name" formControlName="url" placeholder="Enter Payin Webhook">
+                                            <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                        </div>
+
+                                        <div class="card-footer p-0">
+                                            <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!merchantForm.valid">Update</button>
+                                            <!-- <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button> -->
+                                            <button class="btn btn-secondary mtminu20" type="reset">Reset</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="accordion-item" [ngClass]="{'d-none':upiDetailsPresent ==null &&  ccDetailsPresent == null &&  dcDetailsPresent == null && nbDetailsPresent == null}">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Charges
+                            </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div [ngClass]="{'d-none':upiDetailsPresent == null, 'd-block':upiDetailsPresent == !null}">
+                                        <form [formGroup]="uipForm" (ngSubmit)="upiEditSumbmit()">
+                                            <h3>UPI</h3>
+                                            <input type="hidden" name="" formControlName="merchant_id">
+                                            <input type="hidden" name="" formControlName="upi_charge_id">
+                                            <input type="hidden" name="" formControlName="upi_payment_type">
+                                            <div class="form-group mt-2">
+
+                                                <label for="name">Charges in Amount </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" formControlName="upi_charge_amount">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+                                            <div class="form-group">
+
+                                                <label for="name">Charges in Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" formControlName="upi_charge_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Tax Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="upi_charge_tax_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Partner </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="upi_partner_charge">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+
+                                            <div class="card-footer p-0">
+                                                <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!uipForm.valid">Update</button>
+                                                <!-- <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button> -->
+                                                <!-- <button class="btn btn-secondary mtminu20" type="reset">Reset</button> -->
+                                            </div>
+                                        </form>
+                                        <hr>
+                                    </div>
+
+
+                                    <div [ngClass]="{'d-none':ccDetailsPresent == null, 'd-block':ccDetailsPresent == !null}">
+
+                                        <form [formGroup]="ccForm" (ngSubmit)="ccEditSumbmit()">
+                                            <h3>Credit Card</h3>
+                                            <div class="form-group mt-2">
+                                                <input type="hidden" name="" formControlName="merchant_id">
+                                                <input type="hidden" name="" formControlName="cc_charge_id">
+                                                <input type="hidden" name="" formControlName="cc_payment_type">
+                                                <label for="name">Charges in Amount </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="cc_charge_amount">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                    <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                                </div> -->
+                                            </div>
+                                            <div class="form-group">
+
+                                                <label for="name">Charges in Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="cc_charge_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                    <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                                </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Tax Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="cc_charge_tax_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Partner </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="cc_partner_charge">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+                                            <div class="card-footer p-0">
+                                                <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!ccForm.valid">Update</button>
+                                                <!-- <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button> -->
+                                                <!-- <button class="btn btn-secondary mtminu20" type="reset">Reset</button> -->
+                                            </div>
+                                        </form>
+                                        <hr>
+                                    </div>
+
+
+                                    <div [ngClass]="{'d-none':dcDetailsPresent == null, 'd-block':dcDetailsPresent == !null}">
+
+                                        <form [formGroup]="dcForm" (ngSubmit)="dcEditSumbmit()">
+                                            <h3>Debit Card</h3>
+                                            <div class="form-group mt-2">
+                                                <input type="hidden" name="" formControlName="merchant_id">
+                                                <input type="hidden" name="" formControlName="dc_charge_id">
+                                                <input type="hidden" name="" formControlName="dc_payment_type">
+                                                <label for="name">Charges in Amount </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="dc_charge_amount">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                    <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                                </div> -->
+                                            </div>
+                                            <div class="form-group">
+
+                                                <label for="name">Charges in Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="dc_charge_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                    <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                                </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Tax Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="dc_charge_tax_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Partner </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="dc_partner_charge">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+                                            <div class="card-footer p-0">
+                                                <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!dcForm.valid">Update</button>
+                                                <!-- <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button> -->
+                                                <!-- <button class="btn btn-secondary mtminu20" type="reset">Reset</button> -->
+                                            </div>
+
+                                        </form>
+
+                                        <hr>
+                                    </div>
+
+
+                                    <div [ngClass]="{'d-none':nbDetailsPresent == null, 'd-block':nbDetailsPresent == !null}">
+
+                                        <form [formGroup]="nbForm" (ngSubmit)="nbEditSumbmit()">
+                                            <h3>Net Banking</h3>
+                                            <div class="form-group mt-2">
+                                                <input type="hidden" name="" formControlName="merchant_id">
+                                                <input type="hidden" name="" formControlName="nb_charge_id">
+                                                <input type="hidden" name="" formControlName="nb_payment_type">
+                                                <label for="name">Charges in Amount </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="nb_charge_amount">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                        <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                                    </div> -->
+                                            </div>
+                                            <div class="form-group">
+
+                                                <label for="name">Charges in Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="nb_charge_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                        <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                                    </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Tax Percentage </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="nb_charge_tax_percentage">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <label for="name">Charges Partner </label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" class="form-control" id="name" formControlName="nb_partner_charge">
+                                                <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
+                                            </div> -->
+                                            </div>
+                                            <div class="card-footer p-0">
+                                                <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!nbForm.valid">Update</button>
+                                                <!-- <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button> -->
+                                                <!-- <button class="btn btn-secondary mtminu20" type="reset">Reset</button> -->
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="form-group">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#setupfess" aria-expanded="true" aria-controls="setupfess">
+                            Setup Feess
+                            </button>
+                            </h2>
+                            <div id="setupfess" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <form [formGroup]="setupFeesForm" (ngSubmit)="setupfeesEditOnSumbmit()">
+                                        <div class="row ">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <!-- <input type="hidden" name="" formControlName="merchant_id"> -->
+                                                    <label for="name">Amount</label>
+                                                    <!-- <span class="text-danger">*</span> -->
+                                                    <input type="number" class="form-control" id="name" formControlName="setupfeesamtcharge" placeholder="Enter Amount">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
 
-                            <label for="name">Payout Webhook </label>
-                            <!-- <span class="text-danger">*</span> -->
-                            <input type="text" class="form-control" id="name" formControlName="payout_webhook" placeholder="Enter Payout Webhook">
-                            <!-- <div *ngIf="f['payout_webhook'].touched && f['payout_webhook'].invalid" class="invalid-feedback">
-                                <div *ngIf="f['payout_webhook'].errors?.['required']">PayOut Webhook is Required</div>
-                            </div> -->
+                                                    <label for="name">GST </label>
+                                                    <!-- <span class="text-danger">*</span> -->
+                                                    <div class="input-group">
+                                                        <input type="type" class="form-control" formControlName="gst" value="18" style="text-align:left;">
+                                                        <span class="input-group-text" id="inputGroupPrepend2">%</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-2 mt-4">
+                                                <div class="form-group ">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                          Collectable
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-sm-1 mt-4">
+                                                <p>=</p>
+                                            </div>
+                                            <div class="col-sm-3">
+
+                                                <label for="name">Total</label>
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <input type="number" readonly class="form-control" formControlName="unitTotalPrice" id="name" placeholder="Total Amount">
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+
+
+                                        <div class="card-footer p-0">
+                                            <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!setupFeesForm.valid">Confirm</button>
+                                            <!-- <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button> -->
+                                            <button class="btn btn-secondary mtminu20" type="reset">Reset</button>
+                                        </div>
+                                    </form>
+                                    {{setupFeesForm.value | json}}
+                                </div>
+                            </div>
+
+
+
                         </div>
 
-                        <div class="form-group">
 
-                            <label for="name">Website Url </label>
-                            <!-- <span class="text-danger">*</span> -->
-                            <input type="text" class="form-control" id="name" formControlName="url" placeholder="Enter Payin Webhook">
-                            <!-- <div *ngIf="f['url'].touched && f['url'].invalid" class="invalid-feedback">
-                                <div *ngIf="f['url'].errors?.['required']">URL is Required</div>
-                            </div> -->
-                        </div>
 
-                        <div class="card-footer p-0">
-                            <button type="submit" class="btn btn-primary me-2 mtminu20" [disabled]="!merchantForm.valid">Update</button>
-                            <button class="btn btn-info float-end" (click)="backToHome()">Back to Filter</button>
-                            <button class="btn btn-secondary mtminu20" type="reset">Reset</button>
-                        </div>
-                    </form>
+                        <button class="btn btn-info float-end mt-3" (click)="backToHome()">Back to Filter</button>
+
+                    </div>
+
+
                 </div>
 
             </div>

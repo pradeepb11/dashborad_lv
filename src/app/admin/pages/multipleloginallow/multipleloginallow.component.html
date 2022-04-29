@@ -61,8 +61,8 @@
                                                 <td>
 
                                                     <div class="form-check form-switch">
-                                                        <button class="badge btn-primary border-0" (click)="allowLogin(item.user_id, item)">  Allow Login</button>
-
+                                                        <!-- <button class="badge btn-primary border-0" (click)="allowLogin(item.user_id, item)">  Allow Login</button> -->
+                                                        <button class="badge btn-primary border-0" (click)="openModal(template,  item.user_id)">  Allow Login</button>
                                                         <!-- <input class="form-check-input" type="checkbox" role="switch" id="{{item.user_id}}" (change)="fieldsChange($event)"> -->
                                                         <!-- <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label> -->
                                                     </div>
@@ -72,6 +72,13 @@
 
 
                                             </tr>
+                                            <ng-template #template>
+                                                <div class="modal-body text-center">
+                                                    <p>Do you want to confirm Login Allow ? </p>
+                                                    <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+                                                    <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+                                                </div>
+                                            </ng-template>
 
                                             <ng-container *ngIf="MessageDataInfo">
                                                 <tr>
@@ -96,6 +103,7 @@
 
 
                                 </table>
+
                                 <div class="float-end mt-2  pt-3">
                                     <!-- <nav aria-label="Page navigation example">
                                 <ul class="pagination">

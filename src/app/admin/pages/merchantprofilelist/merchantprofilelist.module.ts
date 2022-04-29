@@ -11,6 +11,7 @@ import { DpDatePickerModule } from 'ng2-date-picker';
 import { EditComponent } from './edit/edit.component';
 
 
+
 @NgModule({
   declarations: [
     MerchantprofilelistComponent,
@@ -24,7 +25,8 @@ import { EditComponent } from './edit/edit.component';
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    DpDatePickerModule
+    DpDatePickerModule,
+   
 
   ]
 })

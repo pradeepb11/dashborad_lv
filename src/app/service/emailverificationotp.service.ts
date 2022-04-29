@@ -28,6 +28,11 @@ export class EmailverificationotpService {
     catchError(this.handleError)
 
   }
+  
+  merchantDataRetrive(): Observable<any>{
+    return this._http.get(`${baseUrl}get_email_verification_list`, httpOptions)
+    catchError(this.handleError)
+  }
 
   sendEmailData(sendemail: sendEmailInfo): Observable<any>{
     return this._http.post(`${baseUrl}send_email`, sendemail, httpOptions)

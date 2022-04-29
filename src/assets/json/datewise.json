@@ -1,0 +1,736 @@
+{
+    "status": "success",
+    "message": "Query executed successfully",
+    "data": [{
+            "Column1": "01-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 840,
+            "Column6": 10.29,
+            "Column7": 827.8599999999999,
+            "Column8": 1.85
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Completed",
+            "sum": 500,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Not Successfull",
+            "sum": 1000,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 1800,
+            "Column6": 22.57,
+            "Column7": 1773.36,
+            "Column8": 4.069999999999999
+        },
+        {
+            "Column1": "02-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 1535,
+            "Column6": 9.57,
+            "Column7": 1523.7,
+            "Column8": 1.73
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Completed",
+            "sum": 1500,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Not Successfull",
+            "sum": 1000,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 295,
+            "Column6": 5.91,
+            "Column7": 288.03,
+            "Column8": 1.06
+        },
+        {
+            "Column1": "03-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 970,
+            "Column6": 6.74,
+            "Column7": 962.04,
+            "Column8": 1.22
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Successfull",
+            "sum": 2000,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 1750,
+            "Column6": 27.54,
+            "Column7": 1717.5,
+            "Column8": 4.96
+        },
+        {
+            "Column1": "04-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Successfull",
+            "sum": 2300,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Completed",
+            "sum": 500,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Not Successfull",
+            "sum": 500,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 500,
+            "Column6": 6.27,
+            "Column7": 492.6,
+            "Column8": 1.13
+        },
+        {
+            "Column1": "05-01-2022",
+            "Column2": "1958",
+            "Column3": "SWARAJYA RES",
+            "Column4": "Not Completed",
+            "sum": 3021,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Successfull",
+            "sum": 695,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 1000,
+            "Column6": 12.54,
+            "Column7": 985.2,
+            "Column8": 2.26
+        },
+        {
+            "Column1": "06-01-2022",
+            "Column2": "1958",
+            "Column3": "SWARAJYA RES",
+            "Column4": "Not Completed",
+            "sum": 1007,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 9500,
+            "Column6": 119.15,
+            "Column7": 9359.400000000001,
+            "Column8": 21.45
+        },
+        {
+            "Column1": "07-01-2022",
+            "Column2": "1958",
+            "Column3": "SWARAJYA RES",
+            "Column4": "Payment Approved",
+            "sum": 1007,
+            "Column6": 10.08,
+            "Column7": 995.11,
+            "Column8": 1.81
+        },
+        {
+            "Column1": null,
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 695,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 695,
+            "Column6": 3.48,
+            "Column7": 690.89,
+            "Column8": 0.63
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Successfull",
+            "sum": 450,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 450,
+            "Column6": 5.64,
+            "Column7": 443.34,
+            "Column8": 1.02
+        },
+        {
+            "Column1": "08-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 695,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 9943,
+            "Column6": 193.81,
+            "Column7": 9714.31,
+            "Column8": 34.88
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 2000,
+            "Column6": 25.08,
+            "Column7": 1970.4,
+            "Column8": 4.52
+        },
+        {
+            "Column1": "09-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 500,
+            "Column6": 4.75,
+            "Column7": 494.4,
+            "Column8": 0.85
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Completed",
+            "sum": 2000,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 8000,
+            "Column6": 100.34,
+            "Column7": 7881.6,
+            "Column8": 18.06
+        },
+        {
+            "Column1": "10-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 420,
+            "Column6": 8.19,
+            "Column7": 410.34,
+            "Column8": 1.47
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 275,
+            "Column6": 3.45,
+            "Column7": 270.93,
+            "Column8": 0.62
+        },
+        {
+            "Column1": "11-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 695,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 840,
+            "Column6": 4.2,
+            "Column7": 835.04,
+            "Column8": 0.76
+        },
+        {
+            "Column1": "12-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 1390,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": "13-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 1390,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 200,
+            "Column6": 2.51,
+            "Column7": 197.04,
+            "Column8": 0.45
+        },
+        {
+            "Column1": "14-01-2022",
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 1500,
+            "Column6": 18.81,
+            "Column7": 1477.8,
+            "Column8": 3.39
+        },
+        {
+            "Column1": "15-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 695,
+            "Column6": 3.48,
+            "Column7": 690.89,
+            "Column8": 0.63
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 1300,
+            "Column6": 16.3,
+            "Column7": 1280.76,
+            "Column8": 2.94
+        },
+        {
+            "Column1": "16-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Successfull",
+            "sum": 695,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 695,
+            "Column6": 3.48,
+            "Column7": 690.89,
+            "Column8": 0.63
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 200,
+            "Column6": 2.51,
+            "Column7": 197.04,
+            "Column8": 0.45
+        },
+        {
+            "Column1": "17-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 2300,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 500,
+            "Column6": 6.27,
+            "Column7": 492.6,
+            "Column8": 1.13
+        },
+        {
+            "Column1": "18-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 420,
+            "Column6": 3.99,
+            "Column7": 415.29,
+            "Column8": 0.72
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 100,
+            "Column6": 1.25,
+            "Column7": 98.52,
+            "Column8": 0.23
+        },
+        {
+            "Column1": "19-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 420,
+            "Column6": 3.99,
+            "Column7": 415.29,
+            "Column8": 0.72
+        },
+        {
+            "Column1": "20-01-2022",
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 2100,
+            "Column6": 26.33,
+            "Column7": 2068.92,
+            "Column8": 4.75
+        },
+        {
+            "Column1": "21-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 420,
+            "Column6": 3.99,
+            "Column7": 415.29,
+            "Column8": 0.72
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 100,
+            "Column6": 1.25,
+            "Column7": 98.52,
+            "Column8": 0.23
+        },
+        {
+            "Column1": "22-01-2022",
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 250,
+            "Column6": 3.14,
+            "Column7": 246.3,
+            "Column8": 0.56
+        },
+        {
+            "Column1": "23-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 1115,
+            "Column6": 7.470000000000001,
+            "Column7": 1106.18,
+            "Column8": 1.35
+        },
+        {
+            "Column1": "24-01-2022",
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 600,
+            "Column6": 7.52,
+            "Column7": 591.12,
+            "Column8": 1.3599999999999999
+        },
+        {
+            "Column1": "25-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 4600,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 9550,
+            "Column6": 171.59,
+            "Column7": 9347.52,
+            "Column8": 30.89
+        },
+        {
+            "Column1": "26-01-2022",
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 1500,
+            "Column6": 18.81,
+            "Column7": 1477.8,
+            "Column8": 3.39
+        },
+        {
+            "Column1": "27-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 840,
+            "Column6": 4.2,
+            "Column7": 835.04,
+            "Column8": 0.76
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Successfull",
+            "sum": 250,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": "28-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 695,
+            "Column6": 6.6,
+            "Column7": 687.21,
+            "Column8": 1.19
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 100,
+            "Column6": 1.25,
+            "Column7": 98.52,
+            "Column8": 0.23
+        },
+        {
+            "Column1": "29-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 695,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 695,
+            "Column6": 6.6,
+            "Column7": 687.21,
+            "Column8": 1.19
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Payment Approved",
+            "sum": 2600,
+            "Column6": 32.61,
+            "Column7": 2561.52,
+            "Column8": 5.869999999999999
+        },
+        {
+            "Column1": "30-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Payment Approved",
+            "sum": 695,
+            "Column6": 3.48,
+            "Column7": 690.89,
+            "Column8": 0.63
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Successfull",
+            "sum": 2100,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 11060,
+            "Column6": 153.62,
+            "Column7": 10878.71,
+            "Column8": 27.67
+        },
+        {
+            "Column1": "31-01-2022",
+            "Column2": "2162",
+            "Column3": "Instanet",
+            "Column4": "Not Completed",
+            "sum": 500,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 5395,
+            "Column6": 38.18,
+            "Column7": 5349.94,
+            "Column8": 6.879999999999999
+        },
+        {
+            "Column1": null,
+            "Column2": "2231",
+            "Column3": "Rubikcube technology",
+            "Column4": "Not Completed",
+            "sum": 1300,
+            "Column6": 0,
+            "Column7": 0,
+            "Column8": 0
+        },
+        {
+            "Column1": null,
+            "Column2": null,
+            "Column3": null,
+            "Column4": "Payment Approved",
+            "sum": 12550,
+            "Column6": 239.43,
+            "Column7": 12267.46,
+            "Column8": 43.10999999999999
+        },
+        {
+            "Column1": "Grand Total",
+            "Column2": null,
+            "Column3": null,
+            "Column4": null,
+            "sum": 132393,
+            "Column6": 1368.26,
+            "Column7": 97000.31999999999,
+            "Column8": 246.42
+        }
+
+    ]
+}

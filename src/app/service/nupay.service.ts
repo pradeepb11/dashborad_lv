@@ -31,6 +31,12 @@ export class NupayService {
     catchError(this.handleError)
   }
 
+  // nupay_transaction_log
+  nupayTransactionLogRetrive(): Observable<any>{
+    return this._http.get(`${baseUrl}nupay_transaction_log`, httpOptions)
+    catchError(this.handleError)
+  }
+
 
 
     private handleError(err: HttpErrorResponse){
