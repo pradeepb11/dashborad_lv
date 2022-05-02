@@ -32,7 +32,7 @@ export class MerchantService {
 
   // single data display
   merchantSingleData(merchant_id: number): Observable<any>{
-    return this._http.get(`http://10.0.2.123/paynet_lv_api/public/index.php/api/v1/single_merchant_details/${merchant_id}`, httpOptions)
+    return this._http.get(`${baseUrl}single_merchant_details/${merchant_id}`, httpOptions)
     catchError(this.handleError);
   } 
 

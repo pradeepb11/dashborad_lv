@@ -30,10 +30,9 @@ export class EditComponent implements OnInit {
   formTest: FormGroup;
   currencyPipe: any;
   totalSum: number;
+  netprice: any;
 
-  //
-  FirstNumber1:number;
-  SecondNumber1:number;
+  
 
   constructor(
     private route: Router,
@@ -63,7 +62,7 @@ export class EditComponent implements OnInit {
     .subscribe(
       (res) =>{
         
-        // console.log(res.response.data);
+        console.log(res.response.data);
         this.ccDetailsPresent = res.response.data.cc_details;
         // console.log(this.ccDetailsPresent);
         
@@ -87,7 +86,7 @@ export class EditComponent implements OnInit {
     )
 
     
-
+   
     
 
   }
@@ -162,6 +161,17 @@ export class EditComponent implements OnInit {
       // unitTotalPrice: new FormControl('')
 
     })
+  }
+
+  filterCatalogues(event:any){
+    let test = this.setupFeesForm.get('setupfeesamtcharge').value;
+    let test1 = this.setupFeesForm.get('gst').value;
+    // console.log(test, test1);
+
+    let gstamt=  (test*test1)/100;
+    // console.log(gstamt);
+    this.netprice = test+gstamt ;
+
   }
 
   

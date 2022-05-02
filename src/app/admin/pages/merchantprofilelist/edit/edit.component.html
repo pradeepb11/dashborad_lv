@@ -306,7 +306,7 @@
                                                     <!-- <input type="hidden" name="" formControlName="merchant_id"> -->
                                                     <label for="name">Amount</label>
                                                     <!-- <span class="text-danger">*</span> -->
-                                                    <input type="number" class="form-control" id="setupAmt" formControlName="setupfeesamtcharge" placeholder="Enter Amount" [(ngModel)]="FirstNumber1">
+                                                    <input type="number" class="form-control" id="setupAmt" formControlName="setupfeesamtcharge" (keyup)="filterCatalogues($event)" placeholder="Enter Amount" >
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
@@ -315,7 +315,7 @@
                                                     <label for="name">GST </label>
                                                     <!-- <span class="text-danger">*</span> -->
                                                     <div class="input-group">
-                                                        <input type="number" class="form-control" formControlName="gst" id="setupGST" style="text-align:left;" [(ngModel)]="SecondNumber1">
+                                                        <input type="number" class="form-control" formControlName="gst"  (keyup)="filterCatalogues($event)" style="text-align:left;">
                                                         <span class="input-group-text" id="inputGroupPrepend2">%</span>
                                                     </div>
 
@@ -341,7 +341,8 @@
 
                                                 <label for="name">Total</label>
                                                 <!-- <span class="text-danger">*</span> -->
-                                                <input type="number" readonly class="form-control" value="{{FirstNumber1*SecondNumber1/100}}" id="name" placeholder="Total Amount">
+                                                
+                                                <input type="number" readonly class="form-control fw-bold" value="{{netprice }}"  id="name" placeholder="Total Amount">
                                             </div>
 
 
@@ -358,7 +359,7 @@
                                             <button class="btn btn-secondary mtminu20" type="reset">Reset</button>
                                         </div>
                                     </form>
-                                    {{setupFeesForm.value | json}}
+                                    <!-- {{setupFeesForm.value | json}} -->
                                 </div>
                             </div>
 
