@@ -163,14 +163,16 @@ export class EditComponent implements OnInit {
     })
   }
 
-  filterCatalogues(event:any){
-    let test = this.setupFeesForm.get('setupfeesamtcharge').value;
-    let test1 = this.setupFeesForm.get('gst').value;
-    // console.log(test, test1);
+  filterCatalogues(){
+  // console.log(this.setupFeesForm.get('setupfeesamtcharge').value);
+  // console.log(this.setupFeesForm.get('gst').value)
+    let setupfeesamout = this.setupFeesForm.get('setupfeesamtcharge').value;
+    let gst = this.setupFeesForm.get('gst').value;
+    // // console.log(test, test1);
 
-    let gstamt=  (test*test1)/100;
-    // console.log(gstamt);
-    this.netprice = test+gstamt ;
+    let gstamt=  (setupfeesamout*gst)/100;
+    console.log(gstamt);
+    this.netprice = setupfeesamout+gstamt ;
 
   }
 

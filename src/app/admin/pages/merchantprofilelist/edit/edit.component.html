@@ -293,11 +293,11 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#setupfess" aria-expanded="true" aria-controls="setupfess">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#setupfess" aria-expanded="false" aria-controls="setupfess">
                             Setup Feess
                             </button>
                             </h2>
-                            <div id="setupfess" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div id="setupfess" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <form [formGroup]="setupFeesForm" (ngSubmit)="setupfeesEditOnSumbmit()">
                                         <div class="row ">
@@ -306,7 +306,7 @@
                                                     <!-- <input type="hidden" name="" formControlName="merchant_id"> -->
                                                     <label for="name">Amount</label>
                                                     <!-- <span class="text-danger">*</span> -->
-                                                    <input type="number" class="form-control" id="setupAmt" formControlName="setupfeesamtcharge" (keyup)="filterCatalogues($event)" placeholder="Enter Amount" >
+                                                    <input type="number" class="form-control" id="setupAmt" formControlName="setupfeesamtcharge" (keyup)="filterCatalogues()" placeholder="Enter Amount">
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
@@ -315,7 +315,7 @@
                                                     <label for="name">GST </label>
                                                     <!-- <span class="text-danger">*</span> -->
                                                     <div class="input-group">
-                                                        <input type="number" class="form-control" formControlName="gst"  (keyup)="filterCatalogues($event)" style="text-align:left;">
+                                                        <input type="number" class="form-control" formControlName="gst" (keyup)="filterCatalogues()" style="text-align:left;">
                                                         <span class="input-group-text" id="inputGroupPrepend2">%</span>
                                                     </div>
 
@@ -341,8 +341,8 @@
 
                                                 <label for="name">Total</label>
                                                 <!-- <span class="text-danger">*</span> -->
-                                                
-                                                <input type="number" readonly class="form-control fw-bold" value="{{netprice }}"  id="name" placeholder="Total Amount">
+
+                                                <input type="number" readonly class="form-control fw-bold" value="{{netprice }}" id="name" placeholder="Total Amount">
                                             </div>
 
 
