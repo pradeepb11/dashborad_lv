@@ -23,7 +23,19 @@ export class ReportService {
   dateWiseAmtReport(): Observable<any>{
     return this._http.get('./assets/json/datewise.json', httpOptions)
     catchError(this.handleError)
-  }  
+  }
+
+  payoutReport(timestamp: Timestamp): Observable<any>{
+    return this._http.post<any>('http://localhost:3003/api/payoutreport/', timestamp)
+    catchError(this.handleError)
+  }
+
+  payinReport(timestampReport: TimeStampReport): Observable<any>{
+    return this._http.post<any>('http://localhost:3003/api/payinReport/', timestampReport)
+    catchError(this.handleError)
+  }
+  
+  
 
 
   private handleError(err: HttpErrorResponse){
@@ -42,4 +54,15 @@ export class ReportService {
 
 
 
+}
+
+
+export interface Timestamp{
+  start_date: string;
+  end_date: string;
+} 
+
+export interface TimeStampReport{
+  start_date: string;
+  end_date: string;
 }

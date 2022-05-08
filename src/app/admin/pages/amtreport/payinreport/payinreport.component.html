@@ -1,0 +1,196 @@
+<div class="">
+
+    <div class="card">
+        <div class="card-header pb-0">
+            <h1 class="h3 mb-3"><strong>Nupay</strong> Logs</h1>
+        </div>
+        <div class="card-body p-0">
+
+
+
+
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xxl-12 d-flex">
+                    <div class="card shadow border flex-fill">
+                        <div class="card-header pb-0">
+
+                            <h5 class="card-title mb-0"> Latest Transaction</h5>
+                            <hr>
+                            <form [formGroup]="filterForm">
+
+                                <div class="row ">
+                                    <!-- d-flex justify-content-center align-items-top -->
+                                   
+
+                                    <div class="col-md-3">
+
+                                        <div class="form-group">
+                                            <label>From Date <span class="text-danger">*</span></label>
+                                            <div class="cal-icon">
+                                                <input type="datetime-local-time" [dpDayPicker]="datePickerConfig" formControlName="start_date" class="form-control" [theme]="'dp-material'" [ngClass]="{
+                                                  'is-invalid': submitted && f['start_date'].errors && f['start_date'].touched,
+                                                  'is-valid': f['start_date'].touched && f['start_date'].valid 
+                                                  }" autocomplete="off">
+                                                <div *ngIf="f['start_date'].touched && f['start_date'].invalid" class="invalid-feedback">
+                                                    <div *ngIf="f['start_date'].errors?.['required']">
+                                                        Please Enter Your From Date!
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>To Date<span class="text-danger">*</span></label>
+                                            <div class="cal-icon">
+                                                <input type="datetime-local-time" formControlName="end_date" class="form-control" [dpDayPicker]="datePickerConfig" [theme]="'dp-material'" [ngClass]="{
+                                                  'is-invalid': submitted && f['end_date'].errors && f['end_date'].touched,
+                                                  'is-valid': f['end_date'].touched && f['end_date'].valid 
+                                                  }" autocomplete="off">
+                                                <div *ngIf="f['end_date'].touched && f['end_date'].invalid" class="invalid-feedback">
+                                                    <div *ngIf="f['end_date'].errors?.['required']">
+                                                        Please Enter Your To Date!
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                  
+
+                                  
+
+
+
+
+                                </div>
+                                <div class="col-md-3 mthalf">
+                                    <button class="btn btn-primary me-2 mtminu20" [disabled]="!filterForm.valid" (click)="applyFilter()">submit </button>
+                                    <button class="btn btn-secondary mtminu20" type="reset" (click)="resetDate()">Reset  </button>
+                                </div>
+
+
+
+
+
+                            </form>
+
+
+
+                        </div>
+                        <hr>
+                        <div>
+
+
+                            <div class="table-responsive p-2" style="overflow-x:auto;">
+                                <div class="row p-0 m-0">
+                                    <div class="col-sm-10">
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <input type="text" class="form-control w-100" placeholder="Search..." name="customer" [(ngModel)]="filterTerm">
+                                            <!-- <input type="text" [(ngModel)]="filterBy" placeholder="filterBy" (keyup)="filter()"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-stripes table-bordered table-sm" id="nupayDataTbl">
+                                    <thead>
+                                        <tr>
+                                            <th>Merchant ID</th>    
+                                            <th>Name</th>
+                                            <th>Count</th>
+                                            <th>Sum</th>
+                                            
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+                                        <tr class="text-center" role="status" *ngIf="loading; else showWhenLoaded">
+                                            <td colspan="9" class="text-center p-0">
+                                                <div class="spinner-border text-primary text-center"></div>
+                                            </td>
+                                        </tr>
+
+                                        <ng-template #showWhenLoaded>
+                                            <!-- | paginate: { itemsPerPage:10, currentPage: p } -->
+                                            <tr *ngFor="let item of nupaytList | filter: filterTerm | paginate: { itemsPerPage:10, currentPage: p, totalItems: total }  let i = index">
+                                                
+                                                <td>{{item.merchant_id}}</td>
+                                                <td>{{item.name}}</td>
+                                                <td>{{item.mycount}}</td>
+                                                <td class="text-end fw-bold">{{item.mySUM}}</td>
+                                                
+                                                
+                                            </tr>
+
+                                            <ng-container *ngIf="MessageDataInfo">
+                                                <tr>
+                                                    <td colspan="9" class="text-info text-center">
+                                                        Please Select Input Field
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+                                            <ng-container *ngIf="MessageDataError">
+                                                <tr>
+                                                    <td colspan="9" class="text-info text-center">
+                                                        No date Found
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+
+                                        </ng-template>
+                                    </tbody>
+
+
+
+
+
+
+                                </table>
+                                <div class="float-end mt-2  pt-3">
+                                    <!-- <nav aria-label="Page navigation example">
+                                  <ul class="pagination">
+
+
+                                      <li [ngClass]="{ 'custom-disabled active': currentPageNumber === page }" class="page-item" *ngFor="let page of paginationList">
+                                          <a class="page-link" routerLink="{{page.index}}">{{
+                                        page.label
+                                      }}</a>
+                                      </li>
+
+                                      <li class="page-item">
+                                          <a class="page-link" href="" (click)="getData()"></a>
+                                      </li>
+
+
+
+                                  </ul>
+                              </nav> -->
+                                    <pagination-controls (pageChange)="pageChangeEvent($event)" *ngIf="mypagination"></pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

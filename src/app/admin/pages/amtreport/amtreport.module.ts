@@ -8,11 +8,17 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DpDatePickerModule } from 'ng2-date-picker';
+import { PayoutreportComponent } from './payoutreport/payoutreport.component';
+import { PayinreportComponent } from './payinreport/payinreport.component';
+import { AmountreportComponent } from './amountreport/amountreport.component';
 
 
 @NgModule({
   declarations: [
-    AmtreportComponent
+    AmtreportComponent,
+    PayoutreportComponent,
+    PayinreportComponent,
+    AmountreportComponent
   ],
   imports: [
     CommonModule,
