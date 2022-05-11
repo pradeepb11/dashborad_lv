@@ -30,9 +30,29 @@ export class ReportService {
     catchError(this.handleError)
   }
 
+  payoutreportsucess(): Observable<any>{
+    return this._http.get<any>('http://localhost:3003/api/payoutreport/success', httpOptions)
+    catchError(this.handleError);
+    
+  }
+  payoutReportFailur(): Observable<any>{
+    return this._http.get<any>('http://localhost:3003/api/payoutreport/failure', httpOptions)
+    catchError(this.handleError);
+  }
+
   payinReport(timestampReport: TimeStampReport): Observable<any>{
     return this._http.post<any>('http://43.204.55.13:3000/api/payinReport/', timestampReport, httpOptions)
     catchError(this.handleError)
+  }
+
+  payinReportSuccess(): Observable<any>{
+    return this._http.get<any>('http://localhost:3003/api/payinreport/success', httpOptions)
+    catchError(this.handleError)
+  }
+
+  payinReportFailure(): Observable<any>{
+    return this._http.get<any>('http://localhost:3003/api/payinreport/failure', httpOptions)
+    catchError(this.handleError);
   }
   
   
