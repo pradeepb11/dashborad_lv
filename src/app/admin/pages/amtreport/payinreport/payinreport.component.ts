@@ -9,6 +9,7 @@ import * as dayjs from 'dayjs';
 import {ReportService} from '../../../../service/report.service';
 import {BehaviorSubject} from 'rxjs';
 import * as Feather from 'feather-icons';
+import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
 
 @Component({
   selector: 'app-payinreport',
@@ -50,12 +51,15 @@ export class PayinreportComponent implements OnInit {
 
 
   mypagination = false;
-
+  totalCount:any;
+  status: any[];
+  formula:string = "Payout Report";
+  downloadCSVBTN: boolean =false;
 
 
 
   datePickerConfig ={
-    format: 'YYYY-MM-DD hh:mm:ss',
+    format: 'YYYY-MM-DD HH:mm:ss',
     // format:'DD-MM-YYYY '
  
   }
@@ -103,8 +107,10 @@ applyFilter(){
   this.loading = true;
   // const {start_date, end_date} = this.filterForm.value;
     // console.log(Date.parse(start_date)/1000);
-    let start_date1 = Date.parse(this.start_date)/1000;
-    let end_date1 = Date.parse(this.end_date)/1000;
+      // console.log(this.datePipe.transform(this.start_date,"yyyy-MM-dd"));
+
+    let start_date1 = Date.parse(this.datePipe.transform(this.start_date,"yyyy-MM-dd"))/1000;
+    let end_date1 = Date.parse(this.datePipe.transform(this.end_date,"yyyy-MM-dd"))/1000;
 
     console.log(start_date1, end_date1);
     const {start_date1:string, end_date1:any} = this.filterForm.value;
@@ -134,6 +140,7 @@ this.reportService.payinReport(this.filterForm.value)
         // console.log(this.nupaytList)
         // this.total = res.response.data.total;
         this.mypagination = true;
+        this.downloadCSVBTN = true;
         
       
        
@@ -156,12 +163,42 @@ this.reportService.payinReport(this.filterForm.value)
     
   }
 )
-  
+this.calculateTotalAmt();
+}
+
+calculateTotalAmt(){
+  this.reportService.payinReport(this.filterForm.value)
+  .subscribe(
+    (res) =>{
+      // console.log(res.data[0].mySUM)
+      var msgTotal = res.data.reduce(function(prev:any, cur:any) {
+        return prev + cur.mySUM;
+      }, 0);
+      console.log('Total :', msgTotal); 
+     this.totalCount = msgTotal;
+    }
+  )
+}
+
+downloadCSV(){
+  this.status = ["approved", "rejected", "pending"];
+  var options = {
+    title: 'Payin Report',
+    fieldSeparator: ',',
+    quoteStrings: '"',
+    decimalseparator: '.',
+    showLabels: true,
+    showTitle: true,
+    useBom: true,
+    headers: ['merchant_id', 'name', 'Sum', 'Count']
+  };
+  new AngularCsv(this.nupaytList, this.formula, options)
 }
 
 resetDate(){
   this.filterForm.reset();
   this.nupaytList = [];
+  this.totalCount ='';
   this.MessageDataInfo = true; 
   this.MessageDataError = false;
   this.mypagination = false;

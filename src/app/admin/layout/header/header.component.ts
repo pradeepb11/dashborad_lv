@@ -30,13 +30,25 @@ export class HeaderComponent implements OnInit {
 
   sidebarToggle(){
     const slides = document.getElementsByClassName('js-simplebar');
+    console.log(slides);
     if (slides[0]) {
       var e = (slides[0]);
-      document.querySelectorAll(".js-sidebar [data-bs-parent]").forEach((function(t) {
-      //  console.log(e.parentNode);
-       let b =  e.parentElement !;
-       b.classList.toggle('collapsed');
-      }))
+
+      // let abc = document.querySelectorAll('.js-sidebar [dadta-bs-parent]');
+      // console.log(abc)
+        let a = document.querySelector('.js-simplebar');
+        console.log(a.parentElement.classList.toggle('collapsed'))
+        // a.parentElement.classList.toggle('collapsed')
+
+     
+     
+      // document.querySelectorAll(".js-sidebar [data-bs-parent]").forEach((function(t) {
+       
+      //  let b =  e.parentElement!;
+      //  console.log(b) 
+      //  b.classList.toggle('collapsed');
+      
+      // }))
     }
   }
 

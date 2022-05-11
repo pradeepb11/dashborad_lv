@@ -26,12 +26,12 @@ export class ReportService {
   }
 
   payoutReport(timestamp: Timestamp): Observable<any>{
-    return this._http.post<any>('http://localhost:3003/api/payoutreport/', timestamp)
+    return this._http.post<any>('http://43.204.55.13:3000/api/payoutreport/', timestamp, httpOptions)
     catchError(this.handleError)
   }
 
   payinReport(timestampReport: TimeStampReport): Observable<any>{
-    return this._http.post<any>('http://localhost:3003/api/payinReport/', timestampReport)
+    return this._http.post<any>('http://43.204.55.13:3000/api/payinReport/', timestampReport, httpOptions)
     catchError(this.handleError)
   }
   

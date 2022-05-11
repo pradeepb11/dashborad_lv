@@ -29,10 +29,18 @@
       </div> -->
 
         <ul class="sidebar-nav">
-            <!-- <li class="sidebar-header">
-              Pages
-          </li> -->
+            <li class="sidebar-header">
+
+            </li>
             <li class="sidebar-item active">
+                <a data-bs-target="#dashboards" routerLinkActive="active" routerLink="/dashboard" class="sidebar-link">
+                    <i class="align-middle" data-feather="sliders"></i>
+                    <span class="align-middle">Dadshboard</span>
+                </a>
+
+            </li>
+
+            <li class="sidebar-item active" *ngIf="hideMenu">
                 <a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
                     <i class="align-middle" data-feather="sliders"></i>
                     <span class="align-middle">Merchant Onboarding</span>
@@ -46,7 +54,7 @@
                 </ul>
             </li>
 
-            <li class="sidebar-item">
+            <li class="sidebar-item" *ngIf="hideMenu">
                 <a data-bs-target="#payout" data-bs-toggle="collapse" class="sidebar-link">
                     <i class="align-middle" data-feather="sliders"></i>
                     <span class="align-middle">Payout</span>
@@ -63,13 +71,13 @@
                     <span class="align-middle">Reports</span>
                 </a>
                 <ul id="report" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                    <li class="sidebar-item active"><a class="sidebar-link" routerLinkActive="active" routerLink="/dashboard/amtreport/amountreport">Date Wise</a></li>
+                    <!-- <li class="sidebar-item active"><a class="sidebar-link" routerLinkActive="active" routerLink="/dashboard/amtreport/amountreport">Date Wise</a></li> -->
                     <li class="sidebar-item active"><a class="sidebar-link" routerLinkActive="active" routerLink="/dashboard/amtreport/payoutreport">Payout Report</a></li>
                     <li class="sidebar-item active"><a class="sidebar-link" routerLinkActive="active" routerLink="/dashboard/amtreport/payinreport">Payin Report</a></li>
                 </ul>
             </li>
 
-            <li class="sidebar-item">
+            <li class="sidebar-item" *ngIf="hideMenu">
                 <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Transaction</span>
                 </a>
