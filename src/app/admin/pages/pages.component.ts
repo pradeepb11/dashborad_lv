@@ -3,18 +3,25 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter, map } from "rxjs/operators";
 import * as Feather from 'feather-icons';
+import {ReportService} from '../../service/report.service';
 
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
-  styleUrls: ['./pages.component.scss']
+  styleUrls: ['./pages.component.scss'],
+  providers:[ReportService]
 })
 export class PagesComponent implements OnInit, AfterViewInit {
+
+  dataRefresher: any;
+  sysAlertReport:any;
+  
 
   constructor(
     private titleService: Title,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private reportService:ReportService
   ) { 
 
     this.router.events.pipe(
@@ -49,6 +56,26 @@ export class PagesComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     
+    this.getSYSalertReport();
+    this.refreshData();
   }
+
+  getSYSalertReport(){
+    this.reportService.SYSalertReport()
+    .subscribe(
+      (res) =>{
+        console.log(res.data[0].nooftransactions)
+        this.sysAlertReport = res.data[0].nooftransactions;
+      }
+    )
+  }
+
+  refreshData(){
+    this.dataRefresher = setInterval(()=>{
+    this.getSYSalertReport();
+    
+    },10000)
+  }
+
 
 }

@@ -55,6 +55,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   payoutAmount:any;
   payinAmount:any;
   chart: any= [];
+ 
   @ViewChild('lineChart', {static: true}) private chartRef:any;
   
 
@@ -76,6 +77,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     //payin
     this.getPayinReportSuccess();
     this.getPayinReportFail();
+
+   
     //
     // this.getMonthWiseReportPayout();
     // this.getMonthWiseReportPayin();
@@ -139,6 +142,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       }
     )
   }
+
+  
 
   refreshData(){
     this.dataRefresher = setInterval(()=>{

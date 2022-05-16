@@ -66,6 +66,12 @@ export class ReportService {
     return this._http.get<any>('http://43.204.55.13:3000/api/payinReport/payinmonthReport' , httpOptions)
     catchError(this.handleError);
   }
+
+  // system Alert no of transaction is greatehr than 100 then alert message show
+  SYSalertReport(): Observable<any>{
+    return this._http.get('http://localhost:3000/api/sysalert', httpOptions)
+    catchError(this.handleError)
+  } 
   
   
 
