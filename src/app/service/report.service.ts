@@ -31,12 +31,12 @@ export class ReportService {
   }
 
   payoutreportsucess(): Observable<any>{
-    return this._http.get<any>('http://localhost:3003/api/payoutreport/success', httpOptions)
+    return this._http.get<any>('http://43.204.55.13:3000/api/payoutreport/success', httpOptions)
     catchError(this.handleError);
     
   }
   payoutReportFailur(): Observable<any>{
-    return this._http.get<any>('http://localhost:3003/api/payoutreport/failure', httpOptions)
+    return this._http.get<any>('http://43.204.55.13:3000/api/payoutreport/failure', httpOptions)
     catchError(this.handleError);
   }
 
@@ -46,12 +46,24 @@ export class ReportService {
   }
 
   payinReportSuccess(): Observable<any>{
-    return this._http.get<any>('http://localhost:3003/api/payinreport/success', httpOptions)
+    return this._http.get<any>('http://43.204.55.13:3000/api/payinreport/success', httpOptions)
     catchError(this.handleError)
   }
 
   payinReportFailure(): Observable<any>{
-    return this._http.get<any>('http://localhost:3003/api/payinreport/failure', httpOptions)
+    return this._http.get<any>('http://43.204.55.13:3000/api/payinreport/failure', httpOptions)
+    catchError(this.handleError);
+  }
+
+  // data fetch month latest month wise Payout Report
+  payoutMonthReport(): Observable<any>{
+    return this._http.get<any>('http://43.204.55.13:3000/api/payoutreport/payoutmonthReport' , httpOptions)
+    catchError(this.handleError);
+  }
+
+  // data fetch month latest month wise PayinReport 
+  payinMonthReport(): Observable<any>{
+    return this._http.get<any>('http://43.204.55.13:3000/api/payinReport/payinmonthReport' , httpOptions)
     catchError(this.handleError);
   }
   

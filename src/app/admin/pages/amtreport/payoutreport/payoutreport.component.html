@@ -93,7 +93,7 @@
                             <div class="table-responsive p-2" style="overflow-x:auto;">
                                 <div class="row p-0 m-0">
                                     <div class="col-sm-10">
-                                        <h2>{{totalCount |number:'.2'}}</h2>
+                                        <h2>{{totalCount?.toLocaleString('en-IN') || ''}}</h2>
                                     </div>
                                     <div class="col-sm-2">
                                         <div class="form-group">
@@ -129,7 +129,7 @@
                                             <tr *ngFor="let item of nupaytList | filter: filterTerm | paginate: { itemsPerPage:10, currentPage: p, totalItems: total }  let i = index">
 
                                                 <td>{{item.merchant_id}}</td>
-                                                <td>{{item.name}}</td>
+                                                <td>{{item.merchant_title}}</td>
                                                 <td>{{item.mycount}}</td>
                                                 <td class="text-end fw-bold"> {{item.mySUM | number:'.2'}}</td>
 

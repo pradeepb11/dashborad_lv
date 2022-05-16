@@ -13811,7 +13811,8 @@ aa.badge-dark-light:focus {
 
 @media (min-width: 992px) {
     .content {
-        padding: 3rem 3rem 1.5rem;
+        /* padding: 3rem 3rem 1.5rem; */
+        padding: 2rem 1rem 1rem;
     }
 }
 

@@ -10,6 +10,7 @@ import {ReportService} from '../../../../service/report.service';
 import {BehaviorSubject} from 'rxjs';
 import * as Feather from 'feather-icons';
 import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-payinreport',
@@ -81,8 +82,8 @@ export class PayinreportComponent implements OnInit {
 
   setfilterFormValidate(){
     this.filterForm = this.fb.group({
-      start_date: new FormControl('', Validators.required),
-      end_date: new FormControl('', Validators.required),
+      start_date: new FormControl(moment().startOf('day').format('YYYY-MM-DD HH:mm:ss'), Validators.required),
+      end_date: new FormControl(moment().endOf('day').format('YYYY-MM-DD HH:mm:ss'), Validators.required),
     
     })
   }
@@ -105,12 +106,13 @@ applyFilter(){
   // console.log(this.filterForm.value)
   // console.log(this.filterForm.value)
   this.loading = true;
-  // const {start_date, end_date} = this.filterForm.value;
-    // console.log(Date.parse(start_date)/1000);
-      // console.log(this.datePipe.transform(this.start_date,"yyyy-MM-dd"));
 
-    let start_date1 = Date.parse(this.datePipe.transform(this.start_date,"yyyy-MM-dd"))/1000;
-    let end_date1 = Date.parse(this.datePipe.transform(this.end_date,"yyyy-MM-dd"))/1000;
+  var start = moment().startOf('day'); // set to 12:00 am today
+    // console.log(start)
+    var end = moment().endOf('day'); // set to 23:59 pm today
+
+    let start_date1 = Date.parse(this.datePipe.transform(this.start_date,"yyyy-MM-dd HH:mm:ss"))/1000;
+    let end_date1 = Date.parse(this.datePipe.transform(this.end_date,"yyyy-MM-dd HH:mm:ss"))/1000;
 
     console.log(start_date1, end_date1);
     const {start_date1:string, end_date1:any} = this.filterForm.value;

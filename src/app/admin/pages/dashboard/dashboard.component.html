@@ -4,100 +4,181 @@
     <i data-feather="circle"></i> -->
 </div>
 
+<!-- New Impliment  -->
 <div class="row">
-    <div class="col-12 col-md-6 col-sm-12">
-        <div class="card border shadow-lg radiu">
+    <div class="col-12 col-lg-12 col-xl-12 d-flex">
+        <div class="card radius-10 w-100">
+            <div class="card-body">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-2 row-cols-xxl-2 g-2">
+                    <div class="col">
+                        <div class="card radius-10 bg-light border  mb-0">
+                            <div class="card-body text-left">
+                                <div class="widget-icon bg-white-1 ">
+                                    <p class="mb-0 text-muted fs-4 fw-bold">Payin Success</p>
+                                </div>
+                                <hr class="m-0 p-0 mb-2 mt-2">
+                                <div class="row">
+                                    <div class="col-sm-6 text-start darkGreen">
+                                        <h2 class="darkGreen fw-semibold ">&#8377; {{SuccessPayinTxnAmount?.toLocaleString('en-IN') || '' }}</h2>
+                                        <span>Success Amount</span>
+                                    </div>
+                                    <div class="col-sm-6 text-end darkGreen">
+                                        <h2 class="darkGreen fs-4"> <span class="fw-semibold">{{SuccessPayinTxnCount}}</span></h2>
+                                        <span>Count</span>
+                                    </div>
 
-            <div class="card-header pt-2 pb-0 border-bottom mb-2">
-                <h3>Payin Success </h3>
-            </div>
 
-            <div class="card-body pt-0">
-                <!-- <h4 class="card-title ">Transaction Count</h4> -->
-                <h2 class="mb-1 number-font"><span class="counter">&#8377; {{SuccessPayinTxnAmount | number}}</span></h2>
-                <div class="d-flex"> <small class="text-muted ml-2 fs-12 fs-5">For Today</small> </div>
-                <hr>
-                <div class="row mt-3 dash1">
-                    <div class="col  border-end">
-                        <h3 class="font-weight-500 text-success number-font1 mb-0">&#8377; {{SuccessPayinTxnAmount | number}}</h3> <span class="text-success">Success Amount</span> </div>
-                    <div class="col  border-endt">
-                        <h3 class="font-weight-500 text-success number-font1 mb-0"> {{SuccessPayinTxnCount}}</h3> <span class="text-success">Success Count</span> </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card radius-10 bg-light border  mb-0">
+                            <div class="card-body text-left">
+                                <div class="widget-icon bg-white-1 ">
+                                    <p class="mb-0 text-muted fs-4 fw-bold">Payin Failure</p>
+                                </div>
+                                <hr class="m-0 p-0 mb-2 mt-2">
+                                <div class="row">
+                                    <div class="col-sm-6 text-start darkred">
+                                        <h2 class="text-danger fw-semibold">&#8377; {{FailurePayinTxnAmount?.toLocaleString('en-IN') || ''}}</h2>
+                                        <span>Failure Amount</span>
+                                    </div>
+                                    <div class="col-sm-6 text-end darkred">
+                                        <h2 class="text-danger fs-4">Count: <span class="fw-semibold">{{FailurePayinTxnCount}}</span></h2>
+                                        <span>Count</span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- payout Report -->
+                    <div class="col">
+                        <div class="card radius-10 bg-orange mb-0">
+
+                            <div class="card radius-10 bg-light border  mb-0">
+                                <div class="card-body text-left">
+                                    <div class="widget-icon bg-white-1 ">
+                                        <p class="mb-0 text-muted fs-4 fw-bold">PayOut Success</p>
+                                    </div>
+                                    <hr class="m-0 p-0 mb-2 mt-2">
+                                    <div class="row">
+                                        <div class="col-sm-6 text-start darkGreen">
+                                            <h2 class="darkGreen fw-semibold ">&#8377; {{successPayouttxnAmount?.toLocaleString('en-IN') || ''}}</h2>
+                                            <span>Success Amount</span>
+                                        </div>
+                                        <div class="col-sm-6 text-end darkGreen">
+                                            <h2 class="darkGreen fs-4">Count: <span class="fw-semibold">{{SuccessPayoutTxnCount}}</span></h2>
+                                            <span>Count</span>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="card radius-10 bg-light border  mb-0">
+                            <div class="card-body text-left">
+                                <div class="widget-icon bg-white-1 ">
+                                    <p class="mb-0 text-muted fs-4 fw-bold">PayOut Failure</p>
+                                </div>
+                                <hr class="m-0 p-0 mb-2 mt-2">
+                                <div class="row">
+                                    <div class="col-sm-6 text-start darkred">
+                                        <h2 class="darkred fw-semibold ">&#8377; {{FailurePayoutTxnAmount?.toLocaleString('en-IN') || ''}}</h2>
+                                        <span>Failure Amount</span>
+                                    </div>
+                                    <div class="col-sm-6 text-end darkred">
+                                        <h2 class="darkred fs-4">Count: <span class="fw-semibold">{{FailurePayoutTxnCount}}</span></h2>
+                                        <span>Count</span>
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
 
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="col-12 col-md-6 col-sm-12">
-        <div class="card border shadow-lg radiu">
-
-            <div class="card-header pt-2 pb-0 border-bottom mb-2">
-                <h3>Payin Failure</h3>
-            </div>
-
-            <div class="card-body pt-0">
-                <!-- <h4 class="card-title ">Transaction Amount</h4> -->
-                <h2 class="mb-1 number-font">&#8377;<span class="counter">{{FailurePayinTxnAmount | number}}</span></h2>
-                <div class="d-flex"> <small class="text-muted ml-2 fs-12 fs-5">For Today</small> </div>
-                <hr>
-                <div class="row mt-3 dash1">
-                    <div class="col  border-end">
-                        <h3 class="font-weight-500 text-danger number-font1 mb-0">&#8377; {{FailurePayinTxnAmount | number}}</h3> <span class="text-danger">Failure Amount</span> </div>
-                    <div class="col  border-endt">
-                        <h3 class="font-weight-500 text-danger number-font1 mb-0"> {{FailurePayinTxnCount}}</h3> <span class="text-danger">Failure Count</span> </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-sm-12">
-        <div class="card border shadow-lg radiu">
-
-            <div class="card-header pt-2 pb-0 border-bottom mb-2">
-                <h3>Payout Success</h3>
-            </div>
-
-            <div class="card-body pt-0">
-                <!-- <h4 class="card-title ">Transaction Count</h4> -->
-                <h2 class="mb-1 number-font"><span class="counter">&#8377; {{successPayouttxnAmount | number}}</span></h2>
-                <div class="d-flex"> <small class="text-muted ml-2 fs-12 fs-5">For Today</small> </div>
-                <hr>
-                <div class="row mt-3 dash1">
-                    <div class="col  border-end">
-                        <h3 class="font-weight-500 text-success number-font1 mb-0">&#8377; {{successPayouttxnAmount | number}}</h3> <span class="text-success">Success Amount</span> </div>
-                    <div class="col  border-endt">
-                        <h3 class="font-weight-500 text-success number-font1 mb-0"> {{SuccessPayoutTxnCount}}</h3> <span class="text-success">Success Count</span> </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-sm-12">
-        <div class="card border shadow-lg radiu">
-
-            <div class="card-header pt-2 pb-0 border-bottom mb-2">
-                <h3>Payout Failure</h3>
-            </div>
-
-            <div class="card-body pt-0">
-                <!-- <h4 class="card-title ">Transaction Amount</h4> -->
-                <h2 class="mb-1 number-font">&#8377; <span class="counter">{{FailurePayoutTxnAmount | number }}</span></h2>
-                <div class="d-flex"> <small class="text-muted ml-2 fs-12 fs-5">For Today</small> </div>
-                <hr>
-                <div class="row mt-3 dash1">
-                    <div class="col  border-end">
-                        <h3 class="font-weight-500 text-danger number-font1 mb-0">&#8377; {{FailurePayoutTxnAmount | number}}</h3> <span class="text-danger">Failure Amount</span> </div>
-                    <div class="col  border-endt">
-                        <h3 class="font-weight-500 text-danger number-font1 mb-0"> {{FailurePayoutTxnCount}}</h3> <span class="text-danger">Failure Count</span> </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 
 </div>
+
+
+
+<!-- <div id="InfoBanner">
+    <span class="reversed reversedRight">
+              <span>
+               
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </span>
+    </span>
+    <span class="reversed reversedLeft">
+              Your hourly transaction volume has reached threshold failure, Please Check the threshold settings.
+            </span>
+</div> -->
+
+
+
+
+
+<!-- <div class="row">
+    <div class="card border shadow-lg radius">
+        <div class="row">
+            <div class="card radius-10 bg-light border mb-0">
+                <div class="card-header pt-2 pb-0 border-bottom mb-2">
+                    <h3>Report Chart </h3>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-sm-12">
+
+                            <h3>Payout</h3>
+
+                            <canvas id="myChartpayout" width="400" height="200"></canvas>
+
+                        </div>
+                        <div class="col-12 col-md-6 col-sm-12">
+
+                            <h3>Payin</h3>
+
+                            <canvas id="myChartpayin" width="400" height="200" #barChart></canvas>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div> -->

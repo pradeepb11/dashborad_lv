@@ -10,6 +10,7 @@ import {ReportService} from '../../../../service/report.service';
 import {BehaviorSubject} from 'rxjs';
 import * as Feather from 'feather-icons';
 import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
+import * as moment from 'moment';
 
 
 @Component({
@@ -55,16 +56,18 @@ export class PayoutreportComponent implements OnInit, AfterViewInit {
   status: any[];
   formula:string = "Payout Report";
   downloadCSVBTN: boolean =false;
-
+  
 
 
 
   datePickerConfig ={
     format: 'YYYY-MM-DD HH:mm:ss',
-    // format: 'YYYY-MM-DD 00:00:00',
-    // format:'DD-MM-YYYY 00:00:00'
+    // format:'DD-MM-YYYY'
+    
+   
  
   }
+
 
   constructor(
     private fb: FormBuilder,
@@ -79,13 +82,18 @@ export class PayoutreportComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
   this.setfilterFormValidate();
+
+  const date = moment();
+  
+
  
   }
 
   setfilterFormValidate(){
     this.filterForm = this.fb.group({
-      start_date: new FormControl('', Validators.required),
-      end_date: new FormControl('', Validators.required),
+      // moment(new Date()).format('DD-MM-YYYY')
+      start_date: new FormControl(moment().startOf('day').format('YYYY-MM-DD HH:ss:mm') , Validators.required),
+      end_date: new FormControl(moment().endOf('day').format('YYYY-MM-DD HH:ss:mm'), Validators.required),
     
     })
   }
@@ -102,16 +110,25 @@ export class PayoutreportComponent implements OnInit, AfterViewInit {
 }
 
 applyFilter(){
-  // console.log(this.fromDate);
-  // console.log(this.toDate);
-  // console.log(this.filterForm.value)
-  // console.log(this.filterForm.value)
+  
+
   this.loading = true;
-  //   const {start_date, end_date} = this.filterForm.value;
-    // console.log(Date.parse(start_date)/1000);
+  
+//  console.log(this.filterForm.value);
+//  const {start_date, end_date} = this.filterForm.value;
+//  console.log(start_date, end_date)
+//  console.log(moment(start_date).format())
+
+
+
+  var start = moment().startOf('day'); // set to 12:00 am today
+    // console.log(start)
+    var end = moment().endOf('day'); // set to 23:59 pm today
+
+
    
-    let start_date1 = Date.parse(this.datePipe.transform(this.start_date,"yyyy-MM-dd"))/1000;
-    let end_date1 = Date.parse(this.datePipe.transform(this.end_date,"yyyy-MM-dd"))/1000;
+    let start_date1 = Date.parse(this.datePipe.transform(this.start_date,"yyyy-MM-dd HH:mm:ss"))/1000;
+    let end_date1 = Date.parse(this.datePipe.transform(this.end_date,"yyyy-MM-dd HH:mm:ss"))/1000;
 
     console.log(start_date1, end_date1);
     const {start_date1:string, end_date1:any} = this.filterForm.value;

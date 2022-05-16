@@ -9,10 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import * as feather from 'feather-icons';
 import { DpDatePickerModule } from 'ng2-date-picker';
+import { CurrencyindPipe } from './pipe/currencyind.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurrencyindPipe
   ],
   imports: [
     BrowserModule,
