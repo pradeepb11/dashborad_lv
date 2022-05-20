@@ -69,7 +69,9 @@ export class PayinreportComponent implements OnInit {
     private fb: FormBuilder,
     private datePipe: DatePipe,
     private reportService: ReportService
-  ) { }
+  ) { 
+
+  }
 
   ngAfterViewInit(): void {
     Feather.replace();
@@ -84,6 +86,7 @@ export class PayinreportComponent implements OnInit {
     this.filterForm = this.fb.group({
       start_date: new FormControl(moment().startOf('day').format('YYYY-MM-DD HH:mm:ss'), Validators.required),
       end_date: new FormControl(moment().endOf('day').format('YYYY-MM-DD HH:mm:ss'), Validators.required),
+      // end_date: new FormControl(moment().endOf('day').format('YYYY-MM-DD HH:mm:ss'), Validators.required),
     
     })
   }
@@ -106,10 +109,20 @@ applyFilter(){
   // console.log(this.filterForm.value)
   // console.log(this.filterForm.value)
   this.loading = true;
+  
 
+  
   var start = moment().startOf('day'); // set to 12:00 am today
     // console.log(start)
     var end = moment().endOf('day'); // set to 23:59 pm today
+
+    
+    // console.log(this.start_date, this.end_date);
+    // console.log(this.datePipe.transform(this.start_date,"YYYY-MM-dd HH:mm:ss"))
+    // console.log(this.datePipe.transform(this.end_date,"YYYY-MM-dd HH:mm:ss"))
+
+    console.log(this.start_date)
+    console.log(this.end_date)
 
     let start_date1 = Date.parse(this.datePipe.transform(this.start_date,"yyyy-MM-dd HH:mm:ss"))/1000;
     let end_date1 = Date.parse(this.datePipe.transform(this.end_date,"yyyy-MM-dd HH:mm:ss"))/1000;

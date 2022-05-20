@@ -1,0 +1,244 @@
+<div class="">
+
+    <div class="card">
+        <div class="card-header pb-0">
+            <h1 class="h3 mb-3"><strong>Title</strong></h1>
+        </div>
+        <div class="card-body p-0">
+
+
+
+
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xxl-12 d-flex">
+                    <div class="card shadow border flex-fill">
+                        <div class="card-header pb-0">
+
+                            <h5 class="card-title mb-0">Filter the result</h5>
+                            <hr>
+                            <form [formGroup]="filterFormMerchant">
+
+                                <div class="row ">
+                                    <!-- d-flex justify-content-center align-items-top -->
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label>Transaction id </label>
+                                            <div class="cal-icon">
+                                                <input type="text" name="" class="form-control" formControlName="transactionid" autocomplete="off">
+                                                <!-- <div *ngIf="f['merchant_id'].touched && f['merchant_id'].invalid" class="invalid-feedback">
+                                                <div *ngIf="f['merchant_id'].errors?.['required']">
+                                                    Please Enter Your Merchant Id!
+                                                </div>
+
+                                            </div> -->
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+
+                                        <div class="form-group">
+                                            <label>Transaction Reference Number</label>
+                                            <div class="cal-icon">
+                                                <input type="text" name="" class="form-control" formControlName="transactionrefno" autocomplete="off">
+                                                <!-- <div *ngIf="f['merchant_id'].touched && f['merchant_id'].invalid" class="invalid-feedback">
+                                                  <div *ngIf="f['merchant_id'].errors?.['required']">
+                                                      Please Enter Your Merchant Id!
+                                                  </div>
+
+                                              </div> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Paypage id</label>
+                                            <div class="cal-icon">
+                                                <input type="email" name="" class="form-control" formControlName="paypageid" autocomplete="off">
+                                                <!-- <div *ngIf="f['email_id'].touched && f['email_id'].invalid" class="invalid-feedback">
+                                                  <div *ngIf="f['email_id'].errors?.['required']">
+                                                      Please Enter Email Id!
+                                                  </div>
+                                                  <div *ngIf="f['email_id'].errors?.['pattern']">
+                                                      Email is invalid !
+                                                  </div>
+
+                                              </div> -->
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="col-md-3 mthalf">
+                                    <button class="btn btn-primary me-2 mtminu20" [disabled]="!filterFormMerchant.valid" (click)="applyFilter()">Filter</button>
+                                    <button class="btn btn-secondary mtminu20" type="reset" (click)="resetDate()">Reset  </button>
+                                </div>
+
+
+
+
+
+                            </form>
+
+
+
+                        </div>
+                        <hr>
+                        <div>
+
+
+                            <div class="table-responsive p-2" style="overflow-x:auto;">
+                                <div class="row p-0 m-0">
+                                    <div class="col-sm-10">
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            <input type="text" class="form-control" placeholder="Search..." name="filterTerm" [(ngModel)]="filterTerm">
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-stripes table-bordered table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Txn Id</th>
+                                            <th>Name</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th class="text-center">Status</th>
+                                            <th>Action</th>
+
+                                        </tr>
+                                    </thead>
+
+
+
+                                    <tbody>
+                                        <tr class="text-center" role="status" *ngIf="loading; else showWhenLoaded">
+                                            <td colspan="9" class="text-center p-0">
+                                                <div class="spinner-border text-primary text-center"></div>
+                                            </td>
+                                        </tr>
+
+                                        <ng-template #showWhenLoaded>
+                                            <tr>
+                                                <td>5687</td>
+                                                <td>Lorem, ipsum dolor.</td>
+                                                <td>Lorem, ipsum dolor.</td>
+                                                <td>lorem@gmail.com</td>
+                                                <td class="text-danger">Failure</td>
+                                                <td>
+                                                    <select class="form-select " id="exampleFormControlSelect1">
+                                                    <option selected disabled>Please Select</option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                    <option></option>
+                                                  </select>
+                                                </td>
+                                            </tr>
+                                            <!-- | paginate: { itemsPerPage:10, currentPage: p } -->
+                                            <tr *ngFor="let item of merchantProfilelistList | paginate: { itemsPerPage:10, currentPage: p, totalItems: total } | filter: filterTerm ;  let i = index">
+                                                <td>{{item.merchant_id}}</td>
+                                                <td>{{item.merchant_title}}</td>
+                                                <td>{{item.name}}</td>
+                                                <td>{{item.email}}</td>
+                                                <td class="badge text-dark mt-2 text-center" [ngClass]="{'bg-success text-white': item.status_title ==='Active', ' bg-primary text-white':item.status_title === 'Demo', 'bg-danger text-white':item.status_title ==='Closed', 'bg-info ':item.status_title === 'Activatation Step 1 - Sales', 'bgred-100': item.status_title === 'Activatation Step 2 - Country Sales', 'bgred-400': item.status_title === 'Rejected','bggray-300 ': item.status_title === 'Disable'} ">{{item.status_title }}</td>
+                                                <td>{{item.datetime }}</td>
+
+                                                <td class="text-center" [ngClass]="{'text-success': item.cc_processor, 'text-danger':item.cc_processor == null}"> {{item.cc_processor? item.cc_processor: 'No'}}</td>
+
+                                                <td class="text-center" [ngClass]="{'text-success': item.dc_processor, 'text-danger':item.dc_processor == null}">{{item.dc_processor? item.dc_processor: 'No'}}</td>
+
+                                                <td class="text-center" [ngClass]="{'text-success': item.nb_processor, 'text-danger':item.nb_processor == null}">{{item.nb_processor? item.nb_processor: 'No'}}</td>
+
+                                                <td class="text-center" [ngClass]="{'text-success': item.up_processor, 'text-danger':item.up_processor == null}">{{item.up_processor? item.up_processor: 'No'}}</td>
+
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <a (click)="false" class="bg-primary p-1 text-white rounded"> <i class="fas fa-pen-to-square fa-fw"></i></a>
+                                                    </div>
+
+
+
+                                                </td>
+
+                                            </tr>
+
+                                            <ng-container *ngIf="MessageDataInfo">
+                                                <tr>
+                                                    <td colspan="9" class="text-info text-center">
+                                                        Please Select Input Field
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+
+                                            <ng-container *ngIf="MessageDataError">
+                                                <tr>
+                                                    <td colspan="9" class="text-info text-center">
+                                                        No Found Data
+                                                    </td>
+                                                </tr>
+                                            </ng-container>
+
+
+                                        </ng-template>
+                                    </tbody>
+
+
+
+
+
+
+                                </table>
+                                <div class="float-end mt-2  pt-3">
+                                    <!-- <nav aria-label="Page navigation example">
+                              <ul class="pagination">
+
+
+                                  <li [ngClass]="{ 'custom-disabled active': currentPageNumber === page }" class="page-item" *ngFor="let page of paginationList">
+                                      <a class="page-link" routerLink="{{page.index}}">{{
+                                    page.label
+                                  }}</a>
+                                  </li>
+
+                                  <li class="page-item">
+                                      <a class="page-link" href="" (click)="getData()"></a>
+                                  </li>
+
+
+
+                              </ul>
+                          </nav> -->
+                                    <pagination-controls (pageChange)="pageChangeEvent($event)" *ngIf="mypagination"></pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

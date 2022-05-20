@@ -9,7 +9,16 @@
 
 #InfoBanner {
     margin-bottom: 10px;
-    position: absolute;
+    // position: absolute;
+    left: 302px;
+    top: 66px;
+    text-align: center;
+    // width: 100%;
+}
+
+#InfoBannerA {
+    margin-bottom: 10px;
+    // position: absolute;
     left: 302px;
     top: 66px;
     text-align: center;
@@ -123,4 +132,14 @@
 .overlay:target {
     visibility: visible;
     opacity: 1;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }

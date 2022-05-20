@@ -12,6 +12,8 @@ import {TokenstorageService} from '../../../service/tokenstorage.service';
 export class SidebarComponent implements OnInit {
 
   hideMenu :boolean = true;
+  showMenuSales : boolean = false;
+  showMenuTech : boolean = false; 
 
   constructor(
     private authService: AuthserviceService,
@@ -25,6 +27,10 @@ export class SidebarComponent implements OnInit {
     console.log(usernameInfo.data.email)
     if(usernameInfo.data.email === 'navin.s@paynet.co.in'){
       this.hideMenu = false;
+      this.showMenuSales = true;
+    }else if(usernameInfo.data.email === 'harsh.g@paynet.co.in'){
+      this.hideMenu = false;
+      this.showMenuTech = true;
     }
       
   }

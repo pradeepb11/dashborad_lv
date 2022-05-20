@@ -15,6 +15,9 @@ export class PagesComponent implements OnInit, AfterViewInit {
 
   dataRefresher: any;
   sysAlertReport:any;
+  sysAlertReportpayout: any;
+  infoAlertBar: boolean = false;
+  infoAlertBarPayout: boolean = false;
   
 
   constructor(
@@ -57,6 +60,7 @@ export class PagesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     
     this.getSYSalertReport();
+    this.getSYSalertReportPayout();
     this.refreshData();
   }
 
@@ -66,6 +70,19 @@ export class PagesComponent implements OnInit, AfterViewInit {
       (res) =>{
         console.log(res.data[0].nooftransactions)
         this.sysAlertReport = res.data[0].nooftransactions;
+        this.infoAlertBar = true;
+        
+      }
+    )
+  }
+
+  getSYSalertReportPayout(){
+    this.reportService.SysAlertReportPayout()
+    .subscribe(
+      (res) =>{
+        console.log(res.data[0].No_of_Transactions);
+        this.sysAlertReportpayout = res.data[0].No_of_Transactions;
+        this.infoAlertBarPayout = true;
       }
     )
   }
@@ -73,7 +90,7 @@ export class PagesComponent implements OnInit, AfterViewInit {
   refreshData(){
     this.dataRefresher = setInterval(()=>{
     this.getSYSalertReport();
-    
+    this.getSYSalertReportPayout();
     },10000)
   }
 

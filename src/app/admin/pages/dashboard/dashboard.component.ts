@@ -152,7 +152,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     //payin
     this.getPayinReportSuccess();
     this.getPayinReportFail();
-    },30000)
+    },500)
   }
 
   cancelPageRefresh(){

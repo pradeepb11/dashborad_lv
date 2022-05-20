@@ -10,9 +10,9 @@
         <!-- style="background-color: #e8f0ff;" -->
         <main class="content">
 
-            <div id="InfoBanner" [ngClass]="{
+            <!-- <div id="InfoBannerA" *ngIf="infoAlertBar" [ngClass]="{
                 'd-block': sysAlertReport > 100,
-                'd-none': sysAlertReport < 100 
+                'd-none': sysAlertReport  < 100 
                 }">
                 <span class="reversed reversedRight">
                           <span>
@@ -20,10 +20,29 @@
                             <i class="fa-solid fa-triangle-exclamation"></i>
                           </span>
                 </span>
+
+
                 <span class="reversed reversedLeft">
-                          Your hourly transaction volume has reached threshold failure, Please Check the threshold settings.
-                        </span>
-            </div>
+                          Your hourly <span class="fw-bold blink_me"> Payin transaction </span> volume has reached threshold failure, Please Check the threshold settings.
+                </span>
+            </div> -->
+
+            <!-- <div id="InfoBanner" *ngIf="infoAlertBarPayout" [ngClass]="{
+                'd-block': sysAlertReportpayout > 100,
+                'd-none': sysAlertReportpayout  < 100 
+                }">
+                <span class="reversed reversedRight">
+                          <span>
+                           
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                          </span>
+                </span>
+
+
+                <span class="reversed reversedLeft">
+                          Your hourly  <span class="fw-bold blink_me"> Payout transaction </span> volume has reached threshold failure, Please Check the threshold settings.
+                </span>
+            </div> -->
 
 
             <router-outlet></router-outlet>

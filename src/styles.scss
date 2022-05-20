@@ -116,3 +116,39 @@ textarea.ng-invalid.ng-touched {
 }
 
 @import './assets/sass/sidebar';
+@media (max-width:320px) {
+    .reversedLeft:before,
+    .reversedLeft:after {
+        content: '';
+        width: 0;
+        height: 0;
+        // border-left: 0.8em solid transparent;
+        left: -0.8em;
+        position: absolute;
+    }
+}
+
+@media (max-width:768px) {
+    .reversedLeft:before,
+    .reversedLeft:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 0 !important;
+        left: -0.8em;
+        position: absolute;
+    }
+    .reversedRight {
+        display: none !important;
+    }
+    // #InfoBanner {
+    //     background-color: green;
+    // }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
+    .reversed {
+        font-size: 13px !important;
+    }
+}

@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'amtreport', loadChildren: () => import('./amtreport/amtreport.module').then(m => m.AmtreportModule), data:{ title: ' Amount Report'} },
       { path: 'payoutcharges', loadChildren: () => import('./payoutcharges/payoutcharges.module').then(m => m.PayoutchargesModule), data:{ title: 'Daily Payout Charges'} },
       { path: 'nupaytransaction', loadChildren: () => import('./nupaytransaction/nupaytransaction.module').then(m => m.NupaytransactionModule), data:{ title: 'Nupay Transaction Log'} },
+      { path: 'txnstatus', loadChildren: () => import('./tech/transactionstatus/transactionstatus.module').then(m => m.TransactionstatusModule) },
       
   ]}
 ];
