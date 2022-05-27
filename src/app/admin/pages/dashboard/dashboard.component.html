@@ -11,19 +11,19 @@
             <div class="card-body">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-2 row-cols-xxl-2 g-2">
                     <div class="col">
-                        <div class="card radius-10 bg-light border  mb-0">
+                        <div class="card border-r15 blueBg border  mb-0">
                             <div class="card-body text-left">
                                 <div class="widget-icon bg-white-1 ">
-                                    <p class="mb-0 text-muted fs-4 fw-bold">Payin Success</p>
+                                    <p class="mb-0 text-white fs-4 fw-bold">Payin Success</p>
                                 </div>
-                                <hr class="m-0 p-0 mb-2 mt-2">
+                                <hr class="m-0 p-0 mb-2 mt-2 text-white">
                                 <div class="row">
-                                    <div class="col-sm-6 text-start darkGreen">
-                                        <h2 class="darkGreen fw-semibold ">&#8377; {{SuccessPayinTxnAmount?.toLocaleString('en-IN') || '' }}</h2>
+                                    <div class="col-sm-6 text-start text-white">
+                                        <h2 class="text-white fw-semibold ">&#8377; {{SuccessPayinTxnAmount?.toLocaleString('en-IN') || '' }}</h2>
                                         <span>Success Amount</span>
                                     </div>
-                                    <div class="col-sm-6 text-end darkGreen">
-                                        <h2 class="darkGreen fs-4"> <span class="fw-semibold">{{SuccessPayinTxnCount}}</span></h2>
+                                    <div class="col-sm-6 text-end text-white">
+                                        <h2 class="text-white fs-4"> <span class="fw-semibold">{{SuccessPayinTxnCount}}</span></h2>
                                         <span>Count</span>
                                     </div>
 
@@ -35,19 +35,19 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card radius-10 bg-light border  mb-0">
+                        <div class="card border-r15 bg-orangeNew border  mb-0">
                             <div class="card-body text-left">
                                 <div class="widget-icon bg-white-1 ">
-                                    <p class="mb-0 text-muted fs-4 fw-bold">Payin Failure</p>
+                                    <p class="mb-0 text-white fs-4 fw-bold">Payin Failure</p>
                                 </div>
-                                <hr class="m-0 p-0 mb-2 mt-2">
+                                <hr class="m-0 p-0 mb-2 mt-2 text-white">
                                 <div class="row">
-                                    <div class="col-sm-6 text-start darkred">
-                                        <h2 class="text-danger fw-semibold">&#8377; {{FailurePayinTxnAmount?.toLocaleString('en-IN') || ''}}</h2>
+                                    <div class="col-sm-6 text-start text-white">
+                                        <h2 class="text-white fw-semibold">&#8377; {{FailurePayinTxnAmount?.toLocaleString('en-IN') || ''}}</h2>
                                         <span>Failure Amount</span>
                                     </div>
-                                    <div class="col-sm-6 text-end darkred">
-                                        <h2 class="text-danger fs-4"> <span class="fw-semibold">{{FailurePayinTxnCount}}</span></h2>
+                                    <div class="col-sm-6 text-end text-white">
+                                        <h2 class="text-white fs-4"> <span class="fw-semibold">{{FailurePayinTxnCount}}</span></h2>
                                         <span>Count</span>
                                     </div>
 
@@ -63,21 +63,21 @@
 
                     <!-- payout Report -->
                     <div class="col">
-                        <div class="card radius-10 bg-orange mb-0">
+                        <div class="card radius-10 mb-0">
 
-                            <div class="card radius-10 bg-light border  mb-0">
+                            <div class="card border-r15 blueBg border  mb-0">
                                 <div class="card-body text-left">
                                     <div class="widget-icon bg-white-1 ">
-                                        <p class="mb-0 text-muted fs-4 fw-bold">PayOut Success</p>
+                                        <p class="mb-0 text-white fs-4 fw-bold">PayOut Success</p>
                                     </div>
-                                    <hr class="m-0 p-0 mb-2 mt-2">
+                                    <hr class="m-0 p-0 mb-2 mt-2 text-white">
                                     <div class="row">
-                                        <div class="col-sm-6 text-start darkGreen">
-                                            <h2 class="darkGreen fw-semibold ">&#8377; {{successPayouttxnAmount?.toLocaleString('en-IN') || ''}}</h2>
+                                        <div class="col-sm-6 text-start text-white">
+                                            <h2 class="text-white fw-semibold ">&#8377; {{successPayouttxnAmount?.toLocaleString('en-IN') || ''}}</h2>
                                             <span>Success Amount</span>
                                         </div>
-                                        <div class="col-sm-6 text-end darkGreen">
-                                            <h2 class="darkGreen fs-4"> <span class="fw-semibold">{{SuccessPayoutTxnCount}}</span></h2>
+                                        <div class="col-sm-6 text-end text-white">
+                                            <h2 class="text-white fs-4"> <span class="fw-semibold">{{SuccessPayoutTxnCount}}</span></h2>
                                             <span>Count</span>
                                         </div>
 
@@ -93,19 +93,19 @@
                     </div>
                     <div class="col">
 
-                        <div class="card radius-10 bg-light border  mb-0">
+                        <div class="card border-r15 bg-orangeNew border  mb-0">
                             <div class="card-body text-left">
                                 <div class="widget-icon bg-white-1 ">
-                                    <p class="mb-0 text-muted fs-4 fw-bold">PayOut Failure</p>
+                                    <p class="mb-0 text-white fs-4 fw-bold">PayOut Failure</p>
                                 </div>
-                                <hr class="m-0 p-0 mb-2 mt-2">
+                                <hr class="m-0 p-0 mb-2 mt-2 text-white">
                                 <div class="row">
-                                    <div class="col-sm-6 text-start darkred">
-                                        <h2 class="darkred fw-semibold ">&#8377; {{FailurePayoutTxnAmount?.toLocaleString('en-IN') || ''}}</h2>
+                                    <div class="col-sm-6 text-start text-white">
+                                        <h2 class="text-white fw-semibold ">&#8377; {{FailurePayoutTxnAmount?.toLocaleString('en-IN') || ''}}</h2>
                                         <span>Failure Amount</span>
                                     </div>
-                                    <div class="col-sm-6 text-end darkred">
-                                        <h2 class="darkred fs-4"> <span class="fw-semibold">{{FailurePayoutTxnCount}}</span></h2>
+                                    <div class="col-sm-6 text-end text-white">
+                                        <h2 class="text-white fs-4"> <span class="fw-semibold">{{FailurePayoutTxnCount}}</span></h2>
                                         <span>Count</span>
                                     </div>
 

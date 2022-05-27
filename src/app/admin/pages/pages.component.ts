@@ -68,7 +68,7 @@ export class PagesComponent implements OnInit, AfterViewInit {
     this.reportService.SYSalertReport()
     .subscribe(
       (res) =>{
-        console.log(res.data[0].nooftransactions)
+        // console.log(res.data[0].nooftransactions)
         this.sysAlertReport = res.data[0].nooftransactions;
         this.infoAlertBar = true;
         
@@ -80,7 +80,7 @@ export class PagesComponent implements OnInit, AfterViewInit {
     this.reportService.SysAlertReportPayout()
     .subscribe(
       (res) =>{
-        console.log(res.data[0].No_of_Transactions);
+        // console.log(res.data[0].No_of_Transactions);
         this.sysAlertReportpayout = res.data[0].No_of_Transactions;
         this.infoAlertBarPayout = true;
       }

@@ -24,7 +24,7 @@
                                         <div class="form-group ">
                                             <label>Transaction id </label>
                                             <div class="cal-icon">
-                                                <input type="text" name="" class="form-control" formControlName="transactionid" autocomplete="off">
+                                                <input type="text" name="" class="form-control" formControlName="txn_id" autocomplete="off">
                                                 <!-- <div *ngIf="f['merchant_id'].touched && f['merchant_id'].invalid" class="invalid-feedback">
                                                 <div *ngIf="f['merchant_id'].errors?.['required']">
                                                     Please Enter Your Merchant Id!
@@ -42,7 +42,7 @@
                                         <div class="form-group">
                                             <label>Transaction Reference Number</label>
                                             <div class="cal-icon">
-                                                <input type="text" name="" class="form-control" formControlName="transactionrefno" autocomplete="off">
+                                                <input type="text" name="" class="form-control" formControlName="ref_no" autocomplete="off">
                                                 <!-- <div *ngIf="f['merchant_id'].touched && f['merchant_id'].invalid" class="invalid-feedback">
                                                   <div *ngIf="f['merchant_id'].errors?.['required']">
                                                       Please Enter Your Merchant Id!
@@ -58,7 +58,7 @@
                                         <div class="form-group">
                                             <label>Paypage id</label>
                                             <div class="cal-icon">
-                                                <input type="email" name="" class="form-control" formControlName="paypageid" autocomplete="off">
+                                                <input type="email" name="" class="form-control" formControlName="paypage_id" autocomplete="off">
                                                 <!-- <div *ngIf="f['email_id'].touched && f['email_id'].invalid" class="invalid-feedback">
                                                   <div *ngIf="f['email_id'].errors?.['required']">
                                                       Please Enter Email Id!
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-md-3 mthalf">
                                     <button class="btn btn-primary me-2 mtminu20" [disabled]="!filterFormMerchant.valid" (click)="applyFilter()">Filter</button>
-                                    <button class="btn btn-secondary mtminu20" type="reset" (click)="resetDate()">Reset  </button>
+                                    <!-- <button class="btn btn-secondary mtminu20" type="reset" (click)="resetDate()">Reset  </button> -->
                                 </div>
 
 
@@ -116,10 +116,10 @@
                                 <table class="table table-stripes table-bordered table-sm">
                                     <thead>
                                         <tr>
-                                            <th>Txn Id</th>
-                                            <th>Name</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
+                                            <th>Transaction id</th>
+                                            <th>Amount</th>
+                                            <th>Paypage_id</th>
+                                            <th>Paypage_id</th>
                                             <th class="text-center">Status</th>
                                             <th>Action</th>
 
@@ -136,48 +136,39 @@
                                         </tr>
 
                                         <ng-template #showWhenLoaded>
-                                            <tr>
-                                                <td>5687</td>
-                                                <td>Lorem, ipsum dolor.</td>
-                                                <td>Lorem, ipsum dolor.</td>
-                                                <td>lorem@gmail.com</td>
-                                                <td class="text-danger">Failure</td>
-                                                <td>
-                                                    <select class="form-select " id="exampleFormControlSelect1">
-                                                    <option selected disabled>Please Select</option>
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                    <option></option>
-                                                  </select>
-                                                </td>
-                                            </tr>
+
                                             <!-- | paginate: { itemsPerPage:10, currentPage: p } -->
                                             <tr *ngFor="let item of merchantProfilelistList | paginate: { itemsPerPage:10, currentPage: p, totalItems: total } | filter: filterTerm ;  let i = index">
-                                                <td>{{item.merchant_id}}</td>
-                                                <td>{{item.merchant_title}}</td>
-                                                <td>{{item.name}}</td>
-                                                <td>{{item.email}}</td>
-                                                <td class="badge text-dark mt-2 text-center" [ngClass]="{'bg-success text-white': item.status_title ==='Active', ' bg-primary text-white':item.status_title === 'Demo', 'bg-danger text-white':item.status_title ==='Closed', 'bg-info ':item.status_title === 'Activatation Step 1 - Sales', 'bgred-100': item.status_title === 'Activatation Step 2 - Country Sales', 'bgred-400': item.status_title === 'Rejected','bggray-300 ': item.status_title === 'Disable'} ">{{item.status_title }}</td>
-                                                <td>{{item.datetime }}</td>
-
-                                                <td class="text-center" [ngClass]="{'text-success': item.cc_processor, 'text-danger':item.cc_processor == null}"> {{item.cc_processor? item.cc_processor: 'No'}}</td>
-
-                                                <td class="text-center" [ngClass]="{'text-success': item.dc_processor, 'text-danger':item.dc_processor == null}">{{item.dc_processor? item.dc_processor: 'No'}}</td>
-
-                                                <td class="text-center" [ngClass]="{'text-success': item.nb_processor, 'text-danger':item.nb_processor == null}">{{item.nb_processor? item.nb_processor: 'No'}}</td>
-
-                                                <td class="text-center" [ngClass]="{'text-success': item.up_processor, 'text-danger':item.up_processor == null}">{{item.up_processor? item.up_processor: 'No'}}</td>
-
-                                                <td class="text-center">
-                                                    <div class="btn-group">
-                                                        <a (click)="false" class="bg-primary p-1 text-white rounded"> <i class="fas fa-pen-to-square fa-fw"></i></a>
-                                                    </div>
-
-
+                                                <td>{{item.Transaction_id}}</td>
+                                                <td class="text-end fw-bold">{{item.Amount}}</td>
+                                                <td>{{item.Paypage_id}}</td>
+                                                <td>{{item.Reference_id}}</td>
+                                                <td class="badge text-dark mt-2 text-center" [ngClass]="{'bg-success text-white': item.Transaction_Status ==='Payment Approved', ' bg-primary text-white':item.Transaction_Status === 'Not Successful', 'bg-danger text-white':item.Transaction_Status ==='Payment Rejected', 'bg-info ':item.Transaction_Status === 'Not Completed'} ">{{item.Transaction_Status }}</td>
+                                                <td>
+                                                    <select class="form-select " id="exampleFormControlSelect1" [ngClass]="item.Transaction_Status === 'Payment Approved' ? 'd-none' : 'd-block'" (change)="onChange($event, item)">
+                                                        <option selected disabled>Please Select</option>
+                                                        <option value="Not Completed"
+                                                        [ngClass]="{
+                                                            'd-none':item.Transaction_Status === 'Not Completed'
+                                                        }">Not Completed</option>
+                                                        <option value="Not Successful"
+                                                        [ngClass]="{
+                                                            'd-none':item.Transaction_Status === 'Not Successful'
+                                                        }">Not Successful</option>
+                                                        <option value="Payment Approved	" 
+                                                        [ngClass]="{
+                                                            'd-none':item.Transaction_Status === 'Payment Approved'
+                                                        }">Payment Approved</option>
+                                                        <option value="Payment Rejected" [ngClass]="{
+                                                            'd-none':item.Transaction_Status === 'Payment Rejected'
+                                                        }">Payment Rejected</option>
+                                                      </select>
 
                                                 </td>
+
+
+
+
 
                                             </tr>
 

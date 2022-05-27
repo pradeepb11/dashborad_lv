@@ -152,7 +152,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     //payin
     this.getPayinReportSuccess();
     this.getPayinReportFail();
-    },500)
+    },1000)
   }
 
   cancelPageRefresh(){
@@ -165,7 +165,7 @@ getMonthWiseReportPayout(){
   this.reportService.payoutMonthReport()
   .subscribe(
     (res) =>{
-      console.log(res.data)
+      // console.log(res.data)
       // console.log(this.barChartData[0].data)
       this.payoutLabelDate = res.data.map((date:any) => this.datePipe.transform(date.Date, 'dd-MM-yyyy') )
       this.payoutAmount = res.data.map((date:any) => date.TotalAmount)
@@ -268,11 +268,11 @@ getMonthWiseReportPayin(){
 
 // events
 public chartClicked(e: any): void {
-  console.log(e);
+  // console.log(e);
 }
 
 public chartHovered(e: any): void {
-  console.log(e);
+  // console.log(e);
 }
 
 public randomize(): void {
